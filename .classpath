@@ -4,7 +4,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Utilities - Tools"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Utilities - Geometry"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Utilities - IO Tools"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Utilities - Data Access"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Utilities - Algebra"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
