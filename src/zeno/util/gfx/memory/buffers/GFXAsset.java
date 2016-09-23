@@ -1,8 +1,8 @@
 package zeno.util.gfx.memory.buffers;
 
-import java.awt.image.BufferedImage;
 import java.nio.ByteBuffer;
 
+import zeno.util.dao.files.Image;
 import zeno.util.gfx.GFXMemory;
 import zeno.util.tools.generic.manipulators.Disposable;
 import zeno.util.tools.generic.properties.Discernible;
@@ -114,13 +114,13 @@ public interface GFXAsset extends Discernible, Disposable
 	public abstract void load(ByteBuffer data, int lod, int... size);
 	
 	/**
-	 * Loads a buffered image into a detail level of the {@code GFXAsset}.
+	 * Loads an image into a detail level of the {@code GFXAsset}.
 	 * 
 	 * @param image  an image to load
 	 * @param lod  a level of detail to load
-	 * @see BufferedImage
+	 * @see Image
 	 */
-	public abstract void load(BufferedImage image, int lod);
+	public abstract void load(Image image, int lod);
 	
 		
 	/**

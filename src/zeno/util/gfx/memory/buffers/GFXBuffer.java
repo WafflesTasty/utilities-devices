@@ -2,7 +2,7 @@ package zeno.util.gfx.memory.buffers;
 
 import java.nio.ByteBuffer;
 
-import zeno.util.dao.buffers.Buffer;
+import zeno.util.dao.memory.Buffer;
 import zeno.util.tools.generic.manipulators.Disposable;
 import zeno.util.tools.generic.manipulators.Loadable;
 import zeno.util.tools.generic.properties.Discernible;
