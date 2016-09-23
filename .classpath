@@ -3,8 +3,8 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Utilities - Tools"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Utilities - Geometry"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Utilities - Data Access"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Utilities - Algebra"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Utilities - Geometry"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
