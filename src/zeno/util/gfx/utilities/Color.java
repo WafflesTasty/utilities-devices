@@ -1,7 +1,6 @@
 package zeno.util.gfx.utilities;
 
-import java.util.Arrays;
-
+import zeno.util.tools.Array;
 import zeno.util.tools.Randomizer;
 import zeno.util.tools.primitives.Floats;
 import zeno.util.tools.primitives.Integers;
@@ -214,7 +213,7 @@ public class Color
 	 */
 	public float[] HSBA()
 	{
-		float[] hsba = Arrays.copyOf(HSB(), 4);
+		float[] hsba = Array.copy.of(HSB(), 4);
 		hsba[3] = rgba[3];
 		return hsba;
 	}
@@ -227,7 +226,7 @@ public class Color
 	 */
 	public float[] RGB()
 	{
-		return Arrays.copyOf(rgba, 3);
+		return Array.copy.of(rgba, 3);
 	}
 	
 	/**
