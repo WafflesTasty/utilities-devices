@@ -1,6 +1,6 @@
 package zeno.util.gfx.frame.graphics;
 
-import zeno.util.geom.shapes.surfaces.lateral.Rectangle;
+import zeno.util.geom.shapes.surfaces.Rectangle;
 
 /**
  * The {@code GFXScissorTest} interface defines configurations for the scissor test.

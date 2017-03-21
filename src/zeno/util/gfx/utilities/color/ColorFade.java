@@ -1,6 +1,6 @@
 package zeno.util.gfx.utilities.color;
 
-import zeno.util.algebra.analysis.curves.Interpolation;
+import zeno.util.calc._deprecated.Interpolation;
 import zeno.util.gfx.utilities.Color;
 
 /**
