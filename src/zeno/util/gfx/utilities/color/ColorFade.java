@@ -45,12 +45,37 @@ public class ColorFade extends Interpolation
 	 * Creates a new {@code ColorFade}.
 	 * 
 	 * @param color  a fade color to use
+	 * @param ival  a timer interval
+	 * @see Color
+	 */
+	public ColorFade(Color color, long ival)
+	{
+		super(ival);
+
+		this.color = color;
+		state = State.IDLE;
+	}
+	
+	/**
+	 * Creates a new {@code ColorFade}.
+	 * 
+	 * @param color  a fade color to use
 	 * @see Color
 	 */
 	public ColorFade(Color color)
 	{
-		state = State.IDLE;
 		this.color = color;
+		state = State.IDLE;
+	}
+	
+	/**
+	 * Creates a new {@code ColorFade}.
+	 * 
+	 * @param ival  a timer interval
+	 */
+	public ColorFade(long ival)
+	{
+		this(Color.BLACK, ival);
 	}
 	
 	/**
