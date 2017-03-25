@@ -213,7 +213,7 @@ public class CuboidVertexList extends VertexList<ICuboid>
 	{
 		Vector min = c.Minimum();
 		Vector max = c.Maximum();
-		
+
 		List<Vector> list = new ArrayList<>();
 		for(int i = 0; i < Count(c); i++)
 		{
@@ -227,6 +227,8 @@ public class CuboidVertexList extends VertexList<ICuboid>
 				else
 					v.set(max.get(j), j);
 			}
+			
+			list.add(v);
 		}
 		
 		return list;

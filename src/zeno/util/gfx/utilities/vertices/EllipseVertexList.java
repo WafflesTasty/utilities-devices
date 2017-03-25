@@ -159,6 +159,16 @@ public class EllipseVertexList extends VertexList<IEllipsoid>
 		vCount = count;
 	}
 	
+
+	/**
+	 * Changes the vertex count of an {@code Ellipse}.
+	 * 
+	 * @param count  a new vertex count
+	 */
+	public void setVCount(int count)
+	{
+		vCount = count;
+	}
 	
 	/**
 	 * Generates vertices for an {@code Ellipse}.
@@ -196,4 +206,5 @@ public class EllipseVertexList extends VertexList<IEllipsoid>
 	{
 		return new OrderBy();
 	}
+
 }
