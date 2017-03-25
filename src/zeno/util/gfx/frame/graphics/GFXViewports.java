@@ -1,6 +1,6 @@
 package zeno.util.gfx.frame.graphics;
 
-import zeno.util.geom.geometry.shapes.surfaces.Rectangle;
+import zeno.util.geom.shapes.surfaces.Rectangle;
 
 /**
  * The {@code GFXViewports} interface defines configurations for the viewport.
