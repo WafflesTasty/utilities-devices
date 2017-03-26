@@ -1,7 +1,7 @@
 package zeno.util.gfx.memory.formats;
 
 import zeno.util.gfx.memory.GFXData;
-import zeno.util.tools.enums.NumType;
+import zeno.util.tools.enums.VarType;
 import zeno.util.tools.generic.properties.Discernible;
 
 /**
@@ -16,7 +16,7 @@ public abstract class GFXField implements Discernible
 {
 	private int id;
 	private int count;
-	private NumType type;
+	private VarType type;
 	
 	/**
 	 * Creates a new {@code GFXField}.
@@ -41,9 +41,9 @@ public abstract class GFXField implements Discernible
 	 * Changes the data type of the {@code GFXField}.
 	 * 
 	 * @param type  a new data type
-	 * @see NumType
+	 * @see VarType
 	 */
-	public void setDataType(NumType type)
+	public void setDataType(VarType type)
 	{
 		this.type = type;
 	}
@@ -74,9 +74,9 @@ public abstract class GFXField implements Discernible
 	 * Returns the data type of the {@code GFXField}.
 	 * 
 	 * @return  the value's data type
-	 * @see NumType
+	 * @see VarType
 	 */
-	public NumType Type()
+	public VarType Type()
 	{
 		return type;
 	}
