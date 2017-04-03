@@ -74,7 +74,7 @@ public class LineVertexList extends VertexList<Line>
 	{
 		return new Vector2[]
 		{
-			l.P1(), l.P2()	
+			l.P1(), l.P2()
 		};
 	}
 	
