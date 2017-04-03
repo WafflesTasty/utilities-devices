@@ -186,7 +186,7 @@ public class EllipseVertexList extends VertexList<IEllipsoid>
 			float angle = 2 * Floats.PI * i / vCount;
 			float x = Floats.cos(angle) * e.Width() / 2;
 			float y = Floats.sin(angle) * e.Height() / 2;
-			
+
 			vertices[i] = new Vector2(x + e.X(), y + e.Y());
 		}
 		
@@ -206,5 +206,4 @@ public class EllipseVertexList extends VertexList<IEllipsoid>
 	{
 		return new OrderBy();
 	}
-
 }
