@@ -2,10 +2,10 @@ package zeno.util.gfx.memory.buffers;
 
 import java.nio.ByteBuffer;
 
-import zeno.util.dao.memory.Buffer;
-import zeno.util.tools.generic.manipulators.Disposable;
-import zeno.util.tools.generic.manipulators.Loadable;
-import zeno.util.tools.generic.properties.Discernible;
+import zeno.util.data.memory.Buffer;
+import zeno.util.tools.patterns.manipulators.Disposable;
+import zeno.util.tools.patterns.manipulators.Loadable;
+import zeno.util.tools.patterns.properties.Discernible;
 
 /**
  * The {@code GFXBuffer} interface defines a low-level mechanism to handle {@link ByteBuffer} data.

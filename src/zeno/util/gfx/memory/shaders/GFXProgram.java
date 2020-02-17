@@ -1,10 +1,10 @@
 package zeno.util.gfx.memory.shaders;
 
 import zeno.util.gfx.GFXMemory;
-import zeno.util.tools.generic.manipulators.Activator;
-import zeno.util.tools.generic.manipulators.Disposable;
-import zeno.util.tools.generic.manipulators.Loadable;
-import zeno.util.tools.generic.properties.Discernible;
+import zeno.util.tools.patterns.manipulators.Activator;
+import zeno.util.tools.patterns.manipulators.Disposable;
+import zeno.util.tools.patterns.manipulators.Loadable;
+import zeno.util.tools.patterns.properties.Discernible;
 
 /**
  * The {@code GFXProgram} interface defines a shader pipeline generated in {@link GFXMemory}.

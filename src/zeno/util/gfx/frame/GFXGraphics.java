@@ -6,6 +6,7 @@ import zeno.util.gfx.GFXFrame;
 import zeno.util.gfx.frame.graphics.GFXBlending;
 import zeno.util.gfx.frame.graphics.GFXDepthTest;
 import zeno.util.gfx.frame.graphics.GFXScissorTest;
+import zeno.util.gfx.frame.graphics.GFXTesselation;
 import zeno.util.gfx.frame.graphics.GFXViewports;
 
 /**
@@ -256,6 +257,8 @@ public interface GFXGraphics
 	 * @see GFXScissorTest
 	 */
 	public abstract GFXScissorTest ScissorTest();
+
+	public abstract GFXTesselation Tesselation();
 	
 	/**
 	 * Returns the viewport of the {@code GFXGraphics}.

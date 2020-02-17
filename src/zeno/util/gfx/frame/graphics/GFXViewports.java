@@ -1,6 +1,6 @@
 package zeno.util.gfx.frame.graphics;
 
-import zeno.util.geom.shapes.surfaces.Rectangle;
+import zeno.util.geom.collidables.geometry.planar.Rectangle;
 
 /**
  * The {@code GFXViewports} interface defines configurations for the viewport.
@@ -24,19 +24,19 @@ public interface GFXViewports
 	 * Changes the currently used bounds of the viewport.
 	 * <br> Passing a null value will disable the viewport.
 	 * 
-	 * @param bounds  a new viewport bounds
+	 * @param rect  a new viewport rectangle
 	 * @see Rectangle
 	 */
-	public default void setBounds(Rectangle bounds)
+	public default void setBounds(Rectangle rect)
 	{
-		if(bounds == null)
+		if(rect == null)
 			setBounds(0, 0, 0, 0);
 		else
 		{
-			int x = (int) (bounds.XMin()   - 0.5f);
-			int y = (int) (bounds.YMin()   - 0.5f);
-			int w = (int) (bounds.Width()  + 0.5f);
-			int h = (int) (bounds.Height() + 0.5f);
+			int x = (int) (rect.XMin()   - 0.5f);
+			int y = (int) (rect.YMin()   - 0.5f);
+			int w = (int) (rect.Width()  + 0.5f);
+			int h = (int) (rect.Height() + 0.5f);
 			
 			setBounds(x, y, w, h);
 		}

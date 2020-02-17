@@ -1,7 +1,7 @@
 package zeno.util.gfx.memory.formats;
 
 import zeno.util.gfx.memory.GFXData;
-import zeno.util.tools.generic.properties.Discernible;
+import zeno.util.tools.patterns.properties.Discernible;
 
 /**
  * The {@code GFXGlobal} class defines a global field in a {@link GFXData} object.
@@ -16,6 +16,7 @@ import zeno.util.tools.generic.properties.Discernible;
 public abstract class GFXGlobal<O> implements Discernible
 {
 	private int id;
+	private GFXData parent;
 	
 	/**
 	 * Creates a new {@code GFXGlobal}.
@@ -26,6 +27,20 @@ public abstract class GFXGlobal<O> implements Discernible
 	public GFXGlobal(GFXData data)
 	{
 		id = data.generateGlobalID();
+		parent = data;
+	}
+	
+	/**
+	 * Returns the parent of the {@code GFXGlobal}.
+	 * 
+	 * @return  a parent data
+	 * 
+	 * 
+	 * @see GFXData
+	 */
+	public GFXData Parent()
+	{
+		return parent;
 	}
 	
 	/**

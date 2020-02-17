@@ -38,12 +38,4 @@ public interface GFXProperties
 	 * @see String
 	 */
 	public abstract String getDriver();
-
-	/**
-	 * Returns the last error thrown by the {@link GFXSystem}.
-	 * 
-	 * @return  an error message
-	 * @see String
-	 */
-	public abstract String getError();
 }

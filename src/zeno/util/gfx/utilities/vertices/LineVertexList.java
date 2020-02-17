@@ -1,10 +1,10 @@
 package zeno.util.gfx.utilities.vertices;
 
-import zeno.util.algebra.tensors.vectors.fixed.Vector2;
-import zeno.util.algebra.tensors.vectors.fixed.Vector3;
-import zeno.util.geom.shapes.lines.Line;
-import zeno.util.geom.shapes.lines.Line2D;
-import zeno.util.geom.shapes.lines.Line3D;
+import zeno.util.algebra.linear.vector.fixed.Vector2;
+import zeno.util.algebra.linear.vector.fixed.Vector3;
+import zeno.util.geom.collidables.geometry.generic.ISegment;
+import zeno.util.geom.collidables.geometry.planar.Segment2D;
+import zeno.util.geom.collidables.geometry.spatial.Segment3D;
 import zeno.util.gfx.utilities.VertexList;
 
 /**
@@ -14,9 +14,9 @@ import zeno.util.gfx.utilities.VertexList;
  * @author Zeno
  * 
  * @see VertexList
- * @see Line
+ * @see ISegment
  */
-public class LineVertexList extends VertexList<Line>
+public class LineVertexList extends VertexList<ISegment>
 {
 	/**
 	 * The {@code OrderBy} class defines all vertex order methods.
@@ -25,18 +25,18 @@ public class LineVertexList extends VertexList<Line>
 	 * @author Zeno
 	 * 
 	 * @see VertexList
-	 * @see Line
+	 * @see ISegment
 	 */
-	public class OrderBy extends VertexList<Line>.OrderBy
+	public class OrderBy extends VertexList<ISegment>.OrderBy
 	{
 		@Override
-		public int[] LineStripAdjacency(Line l)
+		public int[] LineStripAdjacency(ISegment l)
 		{
 			return LinesAdjacency(l);
 		}
 		
 		@Override
-		public int[] LinesAdjacency(Line l)
+		public int[] LinesAdjacency(ISegment l)
 		{
 			return new int[]
 			{
@@ -46,13 +46,13 @@ public class LineVertexList extends VertexList<Line>
 		
 		
 		@Override
-		public int[] LineStrip(Line l)
+		public int[] LineStrip(ISegment l)
 		{
 			return Lines(l);
 		}
 		
 		@Override
-		public int[] Lines(Line l)
+		public int[] Lines(ISegment l)
 		{
 			return new int[]
 			{
@@ -63,40 +63,40 @@ public class LineVertexList extends VertexList<Line>
 	
 		
 	/**
-	 * Generates vertices for a {@code Line2D}.
+	 * Generates vertices for a {@code Segment2D}.
 	 * 
 	 * @param l  a line to generate
 	 * @return  a list of vertices
 	 * @see Vector2
-	 * @see Line2D
+	 * @see Segment2D
 	 */
-	public Vector2[] generate(Line2D l)
+	public Vector2[] generate(Segment2D l)
 	{
 		return new Vector2[]
 		{
-			l.P1(), l.P2()
+			(Vector2) l.P1(), (Vector2) l.P2()
 		};
 	}
 	
 	/**
-	 * Generates vertices for a {@code Line3D}.
+	 * Generates vertices for a {@code Segment3D}.
 	 * 
 	 * @param l  a line to generate
 	 * @return  a list of vertices
 	 * @see Vector3
-	 * @see Line3D
+	 * @see Segment3D
 	 */
-	public Vector3[] generate(Line3D l)
+	public Vector3[] generate(Segment3D l)
 	{
 		return new Vector3[]
 		{
-			l.P1(), l.P2()	
+			(Vector3) l.P1(), (Vector3) l.P2()
 		};
 	}
 		
 
 	@Override
-	public int Count(Line l)
+	public int Count(ISegment l)
 	{
 		return 2;
 	}

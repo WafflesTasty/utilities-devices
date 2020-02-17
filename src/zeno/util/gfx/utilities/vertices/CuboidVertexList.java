@@ -3,14 +3,15 @@ package zeno.util.gfx.utilities.vertices;
 import java.util.ArrayList;
 import java.util.List;
 
-import zeno.util.algebra.tensors.vectors.Vector;
-import zeno.util.algebra.tensors.vectors.fixed.Vector2;
-import zeno.util.algebra.tensors.vectors.fixed.Vector3;
-import zeno.util.geom.shapes.ICuboid;
-import zeno.util.geom.shapes.solids.Cuboid;
-import zeno.util.geom.shapes.surfaces.Rectangle;
+import zeno.util.algebra.linear.vector.Vector;
+import zeno.util.algebra.linear.vector.Vectors;
+import zeno.util.algebra.linear.vector.fixed.Vector2;
+import zeno.util.algebra.linear.vector.fixed.Vector3;
+import zeno.util.geom.collidables.geometry.generic.ICuboid;
+import zeno.util.geom.collidables.geometry.planar.Rectangle;
+import zeno.util.geom.collidables.geometry.spatial.Cuboid;
 import zeno.util.gfx.utilities.VertexList;
-import zeno.util.tools.primitives.Integers;
+import zeno.util.tools.Integers;
 
 /**
  * The {@code CuboidVertexList} class defines a generator for cuboid vertices.
@@ -217,12 +218,10 @@ public class CuboidVertexList extends VertexList<ICuboid>
 		List<Vector> list = new ArrayList<>();
 		for(int i = 0; i < Count(c); i++)
 		{
-			int bits = i;
-			
-			Vector v = Vector.create(c.Dimension());
+			Vector v = Vectors.create(c.Dimension());
 			for(int j = 0; j < c.Dimension(); j++)
 			{
-				if(Integers.bitAt(bits, j) == 0)
+				if(Integers.bitAt(i, j) == 0)
 					v.set(min.get(j), j);
 				else
 					v.set(max.get(j), j);

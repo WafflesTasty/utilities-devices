@@ -1,6 +1,6 @@
 package zeno.util.gfx.utilities;
 
-import zeno.util.geom.IGeometry;
+import zeno.util.geom.collidables.IGeometry;
 
 /**
  * The {@code VertexList} class defines a generator for ordered vertices.

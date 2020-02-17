@@ -2,10 +2,11 @@ package zeno.util.gfx.memory.buffers;
 
 import java.nio.ByteBuffer;
 
-import zeno.util.dao.files.Image;
+import zeno.util.algebra.linear.vector.fixed.Vector2;
+import zeno.util.data.handlers.Image;
 import zeno.util.gfx.GFXMemory;
-import zeno.util.tools.generic.manipulators.Disposable;
-import zeno.util.tools.generic.properties.Discernible;
+import zeno.util.tools.patterns.manipulators.Disposable;
+import zeno.util.tools.patterns.properties.Discernible;
 
 /**
  * The {@code GFXAsset} interface defines an asset generated in {@link GFXMemory}.
@@ -65,15 +66,15 @@ public interface GFXAsset extends Discernible, Disposable
 	public static enum Border
 	{
 		/**
-		 * Clamp coördinates to the edge of the {@code GFXAsset}.
+		 * Clamp coï¿½rdinates to the edge of the {@code GFXAsset}.
 		 */
 		CLAMP_TO_EDGE,
 		/**
-		 * Mirror and repeat coördinates of the {@code GFXAsset}.
+		 * Mirror and repeat coï¿½rdinates of the {@code GFXAsset}.
 		 */
 		MIRROR_REPEAT,
 		/**
-		 * Repeat coördinates of the {@code GFXAsset}.
+		 * Repeat coï¿½rdinates of the {@code GFXAsset}.
 		 */
 		REPEAT,
 	}
@@ -102,6 +103,8 @@ public interface GFXAsset extends Discernible, Disposable
 		ASSET_3D;
 	}
 
+	
+	public abstract Vector2 Size();
 	
 	/**
 	 * Loads a data buffer into a detail level of the {@code GFXAsset}.

@@ -1,10 +1,12 @@
 package zeno.util.gfx.utilities.vertices;
 
-import zeno.util.algebra.tensors.vectors.fixed.Vector2;
-import zeno.util.geom.shapes.IEllipsoid;
-import zeno.util.geom.shapes.surfaces.Ellipse;
+import zeno.util.algebra.linear.vector.fixed.Vector2;
+import zeno.util.algebra.linear.vector.fixed.Vector3;
+import zeno.util.geom.collidables.geometry.generic.IEllipsoid;
+import zeno.util.geom.collidables.geometry.planar.Ellipse;
+import zeno.util.geom.collidables.geometry.spatial.Ellipsoid;
 import zeno.util.gfx.utilities.VertexList;
-import zeno.util.tools.primitives.Floats;
+import zeno.util.tools.Floats;
 
 /**
  * The {@code CuboidVertexList} class defines a generator for cuboid vertices.
@@ -79,15 +81,38 @@ public class EllipseVertexList extends VertexList<IEllipsoid>
 		@Override
 		public int[] Triangles(IEllipsoid e)
 		{
-			int vcount = Count(e) - 1;
-			int[] order = new int[3 * vcount];
+			int[] order = new int[60];
 			
-			for(int i = 0; i < vcount; i++)
-			{
-				order[3 * i + 0] = vcount;
-				order[3 * i + 1] = (i + 0) % vcount;
-				order[3 * i + 2] = (i + 1) % vcount;
-			}
+			order[ 0] =  0; order[ 1] =  4; order[ 2] =  1;
+			order[ 3] =  0; order[ 4] =  9; order[ 5] =  4;
+			order[ 6] =  9; order[ 7] =  5; order[ 8] =  4;
+			order[ 9] =  4; order[10] =  5; order[11] =  8;
+			order[12] =  4; order[13] =  8; order[14] =  1;
+			order[15] =  8; order[16] = 10; order[17] =  1;
+			order[18] =  8; order[19] =  3; order[20] = 10;
+			order[21] =  5; order[22] =  3; order[23] =  8;
+			order[24] =  5; order[25] =  2; order[26] =  3;
+			order[27] =  2; order[28] =  7; order[29] =  3;
+			order[30] =  7; order[31] = 10; order[32] =  3;
+			order[33] =  7; order[34] =  6; order[35] = 10;
+			order[36] =  7; order[37] = 11; order[38] =  6;
+			order[39] = 11; order[40] =  0; order[41] =  6;
+			order[42] =  0; order[43] =  1; order[44] =  6;
+			order[45] =  6; order[46] =  1; order[47] = 10;
+			order[48] =  9; order[49] =  0; order[50] = 11;
+			order[51] =  9; order[52] = 11; order[53] =  2;
+			order[54] =  9; order[55] =  2; order[56] =  5;
+			order[57] =  7; order[58] =  2; order[59] = 11;
+			
+//			int vcount = Count(e) - 1;
+//			int[] order = new int[3 * vcount];
+			
+//			for(int i = 0; i < vcount; i++)
+//			{
+//				order[3 * i + 0] = vcount;
+//				order[3 * i + 1] = (i + 0) % vcount;
+//				order[3 * i + 2] = (i + 1) % vcount;
+//			}
 			
 			return order;
 		}
@@ -168,6 +193,39 @@ public class EllipseVertexList extends VertexList<IEllipsoid>
 	public void setVCount(int count)
 	{
 		vCount = count;
+	}
+	
+	/**
+	 * Generates vertices for an {@code Ellipsoid}.
+	 * 
+	 * @param e  an ellipsoid to generate
+	 * @return  a list of vertices
+	 * @see Ellipsoid
+	 * @see Vector3
+	 */
+	public Vector3[] generate(Ellipsoid e)
+	{
+		Vector3[] vertices = new Vector3[12];
+		
+		float x = .525731112119133606f;
+		float z = .850650808352039932f;
+		
+		vertices[ 0] = new Vector3(-x, 0f, z);
+		vertices[ 1] = new Vector3( x, 0f, z);
+		vertices[ 2] = new Vector3(-x, 0f,-z);
+		vertices[ 3] = new Vector3( x, 0f,-z);
+		
+		vertices[ 4] = new Vector3(0f, z, x);
+		vertices[ 5] = new Vector3(0f, z,-x);
+		vertices[ 6] = new Vector3(0f,-z, x);
+		vertices[ 7] = new Vector3(0f,-z,-x);
+		
+		vertices[ 8] = new Vector3( z, x, 0f);
+		vertices[ 9] = new Vector3(-z, x, 0f);
+		vertices[10] = new Vector3( z,-x, 0f);
+		vertices[11] = new Vector3(-z,-x, 0f);
+		
+		return vertices;
 	}
 	
 	/**

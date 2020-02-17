@@ -1,8 +1,8 @@
 package zeno.util.gfx.memory.formats;
 
 import zeno.util.gfx.memory.GFXData;
-import zeno.util.tools.enums.VarType;
-import zeno.util.tools.generic.properties.Discernible;
+import zeno.util.tools.patterns.properties.Discernible;
+import zeno.util.tools.primitives.VarType;
 
 /**
  * The {@code GFXField} class defines a data field in a {@link GFXData} object.
@@ -17,6 +17,7 @@ public abstract class GFXField implements Discernible
 	private int id;
 	private int count;
 	private VarType type;
+	private GFXData parent;
 	
 	/**
 	 * Creates a new {@code GFXField}.
@@ -27,6 +28,20 @@ public abstract class GFXField implements Discernible
 	public GFXField(GFXData data)
 	{
 		id = data.generateFieldID();
+		parent = data;
+	}
+	
+	/**
+	 * Returns the parent of the {@code GFXField}.
+	 * 
+	 * @return  a parent data
+	 * 
+	 * 
+	 * @see GFXData
+	 */
+	public GFXData Parent()
+	{
+		return parent;
 	}
 	
 	

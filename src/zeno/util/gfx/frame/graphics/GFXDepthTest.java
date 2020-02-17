@@ -76,4 +76,6 @@ public interface GFXDepthTest
 	 * @see Method
 	 */
 	public abstract void setMethod(Method method);
+
+	public abstract void reset();
 }
