@@ -1,6 +1,7 @@
 package zeno.util.gfx.frame.graphics;
 
 import zeno.util.gfx.utilities.Color;
+import zeno.util.tools.patterns.manipulators.Resettable;
 
 /**
  * The {@code GFXBlending} interface defines configurations for color blending.
@@ -11,7 +12,7 @@ import zeno.util.gfx.utilities.Color;
  * @since Sep 12, 2016
  * @author Zeno
  */
-public interface GFXBlending
+public interface GFXBlending extends Resettable
 {
 	/**
 	 * The {@code Method} enum defines the blending operators.

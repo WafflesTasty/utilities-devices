@@ -1,6 +1,8 @@
 package zeno.util.gfx.frame.graphics;
 
-public interface GFXTesselation
+import zeno.util.tools.patterns.manipulators.Resettable;
+
+public interface GFXTesselation extends Resettable
 {
 	public abstract void setPatchCount(int count);
 }

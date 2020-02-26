@@ -1,12 +1,14 @@
 package zeno.util.gfx.frame.graphics;
 
+import zeno.util.tools.patterns.manipulators.Resettable;
+
 /**
  * The {@code GFXDepthTest} interface defines configurations of the depth test.
  * 
  * @since Sep 12, 2016
  * @author Zeno
  */
-public interface GFXDepthTest
+public interface GFXDepthTest extends Resettable
 {
 	/**
 	 * The {@code Method} enum defines depth validation operators.
@@ -76,6 +78,4 @@ public interface GFXDepthTest
 	 * @see Method
 	 */
 	public abstract void setMethod(Method method);
-
-	public abstract void reset();
 }

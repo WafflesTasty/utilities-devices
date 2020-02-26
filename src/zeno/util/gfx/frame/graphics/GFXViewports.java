@@ -1,6 +1,7 @@
 package zeno.util.gfx.frame.graphics;
 
 import zeno.util.geom.collidables.geometry.planar.Rectangle;
+import zeno.util.tools.patterns.manipulators.Resettable;
 
 /**
  * The {@code GFXViewports} interface defines configurations for the viewport.
@@ -8,13 +9,13 @@ import zeno.util.geom.collidables.geometry.planar.Rectangle;
  * @since Sep 12, 2016
  * @author Zeno
  */
-public interface GFXViewports
+public interface GFXViewports extends Resettable
 {
 	/**
 	 * Changes the currently used bounds of the viewport.
 	 * 
-	 * @param x  the top left x-coördinate of the bounds
-	 * @param y  the top left y-coördinate of the bounds
+	 * @param x  the top left x-coï¿½rdinate of the bounds
+	 * @param y  the top left y-coï¿½rdinate of the bounds
 	 * @param w  the width  of the bounds
 	 * @param h  the height of the bounds
 	 */

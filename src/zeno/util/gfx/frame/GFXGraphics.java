@@ -8,6 +8,7 @@ import zeno.util.gfx.frame.graphics.GFXDepthTest;
 import zeno.util.gfx.frame.graphics.GFXScissorTest;
 import zeno.util.gfx.frame.graphics.GFXTesselation;
 import zeno.util.gfx.frame.graphics.GFXViewports;
+import zeno.util.tools.patterns.manipulators.Resettable;
 
 /**
  * The {@code GFXGraphics} interface defines an object that executes draw calls on the active {@link GFXFrame}.
@@ -15,7 +16,7 @@ import zeno.util.gfx.frame.graphics.GFXViewports;
  * @since Sep 12, 2016
  * @author Zeno
  */
-public interface GFXGraphics
+public interface GFXGraphics extends Resettable
 {
 	/**
 	 * The {@code Mode} enum defines the modes of primitive construction.
@@ -231,6 +232,16 @@ public interface GFXGraphics
 	public default void drawVertices(Mode mode, int vCount)
 	{
 		drawVertices(mode, vCount, 0);
+	}
+	
+	@Override
+	public default void reset()
+	{
+		Blending().reset();
+		DepthTest().reset();
+		ScissorTest().reset();
+		Tesselation().reset();
+		Viewports().reset();
 	}
 	
 	
