@@ -4,16 +4,16 @@ import zeno.util.gfx.GFXSystem;
 import zeno.util.gfx.window.GFXGraphics;
 
 /**
- * The {@code GFXFrame} interface defines the rendering window in a {@link GFXSystem}.
+ * The {@code GFXWindow} interface defines the rendering window in a {@link GFXSystem}.
  * 
  * @author Zeno
  * @since Sep 12, 2016
  * @version 1.0
  */
-public interface GFXFrame
+public interface GFXWindow
 {	
 	/**
-	 * Returns the graphics of the {@code GFXFrame}.
+	 * Returns the graphics of the {@code GFXWindow}.
 	 * 
 	 * @return  a graphics object
 	 * 
