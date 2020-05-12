@@ -1,5 +1,9 @@
 package zeno.util.gfx;
 
+import zeno.util.coll.hashed.dict.ClassMap;
+import zeno.util.gfx.memory.Generator;
+import zeno.util.gfx.memory.Validator;
+
 /**
  * The {@code GFXMemory} interface handles the allocation of graphics memory.
  * 
@@ -10,60 +14,106 @@ package zeno.util.gfx;
 public interface GFXMemory
 {		
 	/**
-	 * The {@code Type} enum defines different types of graphics memory.
+	 * The {@code Allocator} class handles the allocation of memory objects.
 	 *
 	 * @author Zeno
 	 * @since 12 May 2020
 	 * @version 1.0
 	 */
-	public static enum Type
+	public static class Allocator
 	{
+		private Validator validator;
+		private Generator generator;
+		
 		/**
-		 * An asset contains image data.
+		 * Creates a new {@code Allocator}.
+		 * 
+		 * @param v  a memory validator
+		 * @param g  a memory generator
+		 * 
+		 * 
+		 * @see Generator
+		 * @see Validator
 		 */
-		ASSET,
+		public Allocator(Validator v, Generator g)
+		{
+			validator = v;
+			generator = g;
+		}
+		
 		/**
-		 * A buffer contains vertex data.
+		 * Creates a new {@code Allocator}.
+		 * 
+		 * @param g  a memory generator
+		 * 
+		 * 
+		 * @see Generator
 		 */
-		BUFFER,
+		public Allocator(Generator g)
+		{
+			this((data) -> true, g);
+		}
+		
+		
 		/**
-		 * A field defines a format type.
+		 * Returns the generator of the {@code Allocator}.
+		 * 
+		 * @return  a memory generator
+		 * 
+		 * 
+		 * @see Generator
 		 */
-		FIELD,
-		/**
-		 * A format defines a buffer layout.
-		 */
-		FORMAT,
-		/**
-		 * A global defines a shader uniform.
-		 */
-		GLOBAL,
-		/**
-		 * A group a program format specification.
-		 */
-		GROUP,
-		/**
-		 * A program compiles a complete set of shaders.
-		 */
-		PROGRAM,
-		/**
-		 * A shader defines a single stage in a program.
-		 */
-		SHADER
-	}
+		public Generator Generator()
+		{
+			return generator;
+		}
 
+		/**
+		 * Returns the validator of the {@code Allocator}.
+		 * 
+		 * @return  a memory allocator
+		 * 
+		 * 
+		 * @see Validator
+		 */
+		public Validator Validator()
+		{
+			return validator;
+		}
+	}
+	
+	
+	/**
+	 * Returns the allocators in the {@code GFXMemory}.
+	 * 
+	 * @return  an allocator map
+	 * 
+	 * 
+	 * @see Allocator
+	 * @see ClassMap
+	 */
+	public abstract ClassMap<Allocator> Allocators();
 
 	/**
 	 * Generates a data object in the {@code GFXMemory}.
 	 * 
-	 * @param <P>   a data class type
-	 * @param type  a data memory type
+	 * @param <P>   a data memory class type
+	 * @param type  a data memory class
 	 * @param data  a parameter set
 	 * @return  a data object
 	 * 
 	 * 
 	 * @see Object
-	 * @see Type
+	 * @see Class
 	 */
-	public abstract <P> P generate(Type type, Object... data);
+	public default <P> P generate(Class<P> type, Object... data)
+	{
+		Allocator alloc = Allocators().get(type);
+		if(alloc.Validator().check(data))
+		{
+			return (P) alloc.Generator().create(data);
+		}
+		
+		return null;
+	}
 }
