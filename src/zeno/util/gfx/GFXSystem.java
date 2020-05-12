@@ -1,5 +1,8 @@
 package zeno.util.gfx;
 
+import zeno.util.gfx.system.GFXFrame;
+import zeno.util.gfx.system.GFXMemory;
+
 /**
  * The {@code GFXSystem} interface defines the core functionality of a graphics system.
  * 

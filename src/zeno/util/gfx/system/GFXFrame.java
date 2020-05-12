@@ -1,5 +1,6 @@
-package zeno.util.gfx;
+package zeno.util.gfx.system;
 
+import zeno.util.gfx.GFXSystem;
 import zeno.util.gfx.window.GFXGraphics;
 
 /**

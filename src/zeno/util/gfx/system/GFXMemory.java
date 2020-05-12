@@ -1,4 +1,4 @@
-package zeno.util.gfx;
+package zeno.util.gfx.system;
 
 import zeno.util.coll.hashed.dict.ClassMap;
 import zeno.util.gfx.utilities.Generator;
