@@ -4,8 +4,7 @@ import java.nio.ByteBuffer;
 
 import zeno.util.algebra.linear.vector.Vector;
 import zeno.util.data.handlers.Image;
-import zeno.util.tools.patterns.manipulators.Disposable;
-import zeno.util.tools.patterns.properties.Discernible;
+import zeno.util.gfx.GFXMemory;
 
 /**
  * The {@code GFXAsset} interface defines an asset generated in {@code GFXMemory}.
@@ -15,10 +14,9 @@ import zeno.util.tools.patterns.properties.Discernible;
  * @version 1.0
  * 
  * 
- * @see Discernible
- * @see Disposable
+ * @see GFXMemory
  */
-public interface GFXAsset extends Discernible, Disposable
+public interface GFXAsset extends GFXMemory.Data
 {
 	/**
 	 * The {@code Hints} interface defines rendering hints for a {@code GFXAsset}.

@@ -3,6 +3,8 @@ package zeno.util.gfx;
 import zeno.util.coll.hashed.dict.ClassMap;
 import zeno.util.gfx.memory.Generator;
 import zeno.util.gfx.memory.Validator;
+import zeno.util.tools.patterns.manipulators.Disposable;
+import zeno.util.tools.patterns.properties.Discernible;
 
 /**
  * The {@code GFXMemory} interface handles the allocation of graphics memory.
@@ -82,7 +84,51 @@ public interface GFXMemory
 		}
 	}
 	
+	/**
+	 * The {@code Data} class defines data in the {@code GFXMemory}.
+	 *
+	 * @author Zeno
+	 * @since 12 May 2020
+	 * @version 1.0
+	 * 
+	 * 
+	 * @see Discernible
+	 * @see Disposable
+	 */
+	public static interface Data extends Discernible, Disposable
+	{
+		@Override
+		public default void dispose()
+		{
+			// NOT APPLICABLE
+		}
+	}
 	
+	
+	/**
+	 * Generates a discernible data object in the {@code GFXMemory}.
+	 * 
+	 * @param <D>   a data memory class type
+	 * @param type  a data memory class
+	 * @param data  a parameter set
+	 * @return  a data object
+	 * 
+	 * 
+	 * @see Object
+	 * @see Class
+	 * @see Data
+	 */
+	public default <D extends Data> D generate(Class<D> type, Object... data)
+	{
+		Allocator alloc = Allocators().get(type);
+		if(alloc.Validator().check(data))
+		{
+			return (D) alloc.Generator().create(data);
+		}
+		
+		return null;
+	}
+
 	/**
 	 * Returns the allocators in the {@code GFXMemory}.
 	 * 
@@ -93,27 +139,4 @@ public interface GFXMemory
 	 * @see ClassMap
 	 */
 	public abstract ClassMap<Allocator> Allocators();
-
-	/**
-	 * Generates a data object in the {@code GFXMemory}.
-	 * 
-	 * @param <P>   a data memory class type
-	 * @param type  a data memory class
-	 * @param data  a parameter set
-	 * @return  a data object
-	 * 
-	 * 
-	 * @see Object
-	 * @see Class
-	 */
-	public default <P> P generate(Class<P> type, Object... data)
-	{
-		Allocator alloc = Allocators().get(type);
-		if(alloc.Validator().check(data))
-		{
-			return (P) alloc.Generator().create(data);
-		}
-		
-		return null;
-	}
 }
