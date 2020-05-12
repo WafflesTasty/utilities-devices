@@ -1,6 +1,6 @@
 package zeno.util.gfx;
 
-import zeno.util.gfx.frame.GFXGraphics;
+import zeno.util.gfx.window.GFXGraphics;
 
 /**
  * The {@code GFXFrame} interface defines the rendering window in a {@link GFXSystem}.
