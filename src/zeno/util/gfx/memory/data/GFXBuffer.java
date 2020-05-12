@@ -29,10 +29,10 @@ public interface GFXBuffer extends GFXMemory.Data, Buffer
 		/**
 		 * Creates a {@code Layout} with the given parameters.
 		 * 
-		 * @param usage  a buffer access hint
-		 * @param rate   a buffer rate hint
-		 * @param type   a buffer type
-		 * @param size   a buffer size
+		 * @param access  a buffer access hint
+		 * @param rate    a buffer rate hint
+		 * @param type    a buffer type
+		 * @param size    a buffer size
 		 * @return  a buffer layout
 		 * 
 		 * 
@@ -40,20 +40,20 @@ public interface GFXBuffer extends GFXMemory.Data, Buffer
 		 * @see Rate
 		 * @see Type
 		 */
-		public static Layout create(Access usage, Rate rate, Type type, int size)
+		public static Layout create(Access access, Rate rate, Type type, int size)
 		{
 			return new Layout()
-			{
-				@Override
-				public Access Access()
-				{
-					return usage;
-				}
-				
+			{				
 				@Override
 				public Rate Rate()
 				{
 					return rate;
+				}
+			
+				@Override
+				public Access Access()
+				{
+					return access;
 				}
 				
 				@Override
@@ -107,32 +107,6 @@ public interface GFXBuffer extends GFXMemory.Data, Buffer
 		
 		
 		/**
-		 * The {@code Access} enum defines access hints for a {@code GFXBuffer}.
-		 * 
-		 * @author Zeno
-		 * @since Sep 12, 2016
-		 * @version 1.0
-		 * 
-		 * 
-		 * @see GFXBuffer
-		 */
-		public static enum Access
-		{
-			/**
-			 * The data is used for copy operations.
-			 */
-			COPY,
-			/**
-			 * The data is used for draw operations.
-			 */
-			WRITE,
-			/**
-			 * The data is used for read operations.
-			 */
-			READ;
-		}
-		
-		/**
 		 * The {@code Rate} enum defines rate hints for a {@code GFXBuffer}.
 		 * 
 		 * @author Zeno
@@ -158,6 +132,32 @@ public interface GFXBuffer extends GFXMemory.Data, Buffer
 			STREAM;
 		}
 		
+		/**
+		 * The {@code Access} enum defines access hints for a {@code GFXBuffer}.
+		 * 
+		 * @author Zeno
+		 * @since Sep 12, 2016
+		 * @version 1.0
+		 * 
+		 * 
+		 * @see GFXBuffer
+		 */
+		public static enum Access
+		{
+			/**
+			 * The data is used for copy operations.
+			 */
+			COPY,
+			/**
+			 * The data is used for draw operations.
+			 */
+			WRITE,
+			/**
+			 * The data is used for read operations.
+			 */
+			READ;
+		}
+				
 		/**
 		 * The {@code Type} enum defines the type of a {@code GFXBuffer}.
 		 * 
@@ -198,21 +198,17 @@ public interface GFXBuffer extends GFXMemory.Data, Buffer
 	
 		
 		/**
-		 * Returns the size of the {@code Layout}.
+		 * Returns the buffer rate of the {@code Layout}.
 		 * 
-		 * @return  a buffer size
+		 * @return  a buffer rate
+		 * 
+		 * 
+		 * @see Rate
 		 */
-		public abstract int Size();
-		
-		/**
-		 * Returns the buffer type of the {@code Layout}.
-		 * 
-		 * @return  a buffer type
-		 * 
-		 * 
-		 * @see Type
-		 */
-		public abstract Type Type();
+		public default Rate Rate()
+		{
+			return Rate.DYNAMIC;
+		}
 		
 		/**
 		 * Returns the buffer access of the {@code Layout}.
@@ -228,17 +224,21 @@ public interface GFXBuffer extends GFXMemory.Data, Buffer
 		}
 		
 		/**
-		 * Returns the buffer rate of the {@code Layout}.
+		 * Returns the buffer type of the {@code Layout}.
 		 * 
-		 * @return  a buffer rate
+		 * @return  a buffer type
 		 * 
 		 * 
-		 * @see Rate
+		 * @see Type
 		 */
-		public default Rate Rate()
-		{
-			return Rate.DYNAMIC;
-		}
+		public abstract Type Type();
+		
+		/**
+		 * Returns the size of the {@code Layout}.
+		 * 
+		 * @return  a buffer size
+		 */
+		public abstract int Size();
 	}
 	
 			
