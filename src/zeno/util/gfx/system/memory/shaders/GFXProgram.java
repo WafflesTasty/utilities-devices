@@ -1,6 +1,6 @@
-package zeno.util.gfx.memory.shaders;
+package zeno.util.gfx.system.memory.shaders;
 
-import zeno.util.gfx.GFXMemory;
+import zeno.util.gfx.system.GFXMemory;
 import zeno.util.tools.patterns.manipulators.Activator;
 import zeno.util.tools.patterns.manipulators.Loadable;
 

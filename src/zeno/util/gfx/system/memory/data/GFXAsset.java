@@ -1,10 +1,10 @@
-package zeno.util.gfx.memory.data;
+package zeno.util.gfx.system.memory.data;
 
 import java.nio.ByteBuffer;
 
 import zeno.util.algebra.linear.vector.Vector;
 import zeno.util.data.handlers.Image;
-import zeno.util.gfx.GFXMemory;
+import zeno.util.gfx.system.GFXMemory;
 
 /**
  * The {@code GFXAsset} interface defines an asset generated in {@code GFXMemory}.

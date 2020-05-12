@@ -1,6 +1,6 @@
-package zeno.util.gfx.memory.groups;
+package zeno.util.gfx.system.memory.groups;
 
-import zeno.util.gfx.GFXMemory;
+import zeno.util.gfx.system.GFXMemory;
 
 /**
  * The {@code GFXGlobal} interface defines a global field in a {@code GFXGroup}.

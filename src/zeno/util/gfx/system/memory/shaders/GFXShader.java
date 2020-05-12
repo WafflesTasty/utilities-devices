@@ -1,6 +1,6 @@
-package zeno.util.gfx.memory.shaders;
+package zeno.util.gfx.system.memory.shaders;
 
-import zeno.util.gfx.GFXMemory;
+import zeno.util.gfx.system.GFXMemory;
 
 /**
  * The {@code GFXShader} interface defines a shader stage in a {@code GFXProgram}.
