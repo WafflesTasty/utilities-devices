@@ -1,4 +1,4 @@
-package zeno.util.gfx.memory;
+package zeno.util.gfx.utilities;
 
 /**
  * The {@code Validator} interface checks parameter sets in the {@code GFXMemory}.

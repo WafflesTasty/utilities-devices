@@ -1,4 +1,4 @@
-package zeno.util.gfx.memory;
+package zeno.util.gfx.utilities;
 
 /**
  * The {@code Generator} interface creates data objects in the {@code GFXMemory}.
