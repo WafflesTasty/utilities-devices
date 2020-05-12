@@ -1,7 +1,7 @@
 package zeno.util.gfx.system;
 
 import zeno.util.gfx.GFXSystem;
-import zeno.util.gfx.window.GFXGraphics;
+import zeno.util.gfx.system.window.GFXGraphics;
 
 /**
  * The {@code GFXWindow} interface defines the rendering window in a {@link GFXSystem}.
