@@ -85,7 +85,7 @@ public interface GFXMemory
 	}
 	
 	/**
-	 * The {@code Data} class defines data in the {@code GFXMemory}.
+	 * The {@code Data} interface defines data in the {@code GFXMemory}.
 	 *
 	 * @author Zeno
 	 * @since 12 May 2020
