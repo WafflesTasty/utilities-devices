@@ -8,8 +8,9 @@ import zeno.util.tools.helper.Array;
 /**
  * The {@code Color} class defines a basic 24-bit color component.
  * 
- * @since Sep 12, 2016
  * @author Zeno
+ * @since Sep 12, 2016
+ * @version 1.0
  */
 public class Color
 {	
@@ -17,7 +18,7 @@ public class Color
 	
 	/**
 	 * Creates a new {@code Color}.
-	 * <br> Values between 0.0 and 1.0 are expected.
+	 * </br> Parameters are given in [0.0, 1.0].
 	 * 
 	 * @param r  a  red   percentage
 	 * @param g  a  green percentage
@@ -37,7 +38,7 @@ public class Color
 	
 	/**
 	 * Creates a new {@code Color}.
-	 * <br> Values between 0 and 255 are expected.
+	 * </br> Parameters are given in [0, 255].
 	 * 
 	 * @param r  a  red   value
 	 * @param g  a  green value
@@ -51,7 +52,7 @@ public class Color
 	
 	/**
 	 * Creates a new {@code Color}.
-	 * <br> Values between 0.0 and 1.0 are expected.
+	 * </br> Parameters are given in [0.0, 1.0].
 	 * 
 	 * @param r  a  red   percentage
 	 * @param g  a  green percentage
@@ -64,7 +65,7 @@ public class Color
 	
 	/**
 	 * Creates a new {@code Color}.
-	 * <br> Values between 0 and 255 are expected.
+	 * </br> Parameters are given in [0, 255].
 	 * 
 	 * @param r  a  red   value
 	 * @param g  a  green value
@@ -77,7 +78,7 @@ public class Color
 			
 	/**
 	 * Creates a new {@code Color}.
-	 * </br> A hexadecimal value 0xrrggbbaa is expected.
+	 * </br> Hex codes are given as {@code 0xrrggbbaa}.
 	 * 
 	 * @param hex  a color hex code
 	 */
@@ -95,9 +96,9 @@ public class Color
 
 	/**
 	 * Returns the rgba values of the {@code Color}.
-	 * <br> The values are presented between 0.0 and 1.0.
+	 * </br> Parameters are given in [0.0, 1.0].
 	 * 
-	 * @return  the color's rgba values
+	 * @return  a set of rgba values
 	 */
 	public float[] RGBA()
 	{
@@ -106,9 +107,9 @@ public class Color
 	
 	/**
 	 * Returns the hsba values of the {@code Color}.
-	 * <br> The values are presented between 0.0 and 1.0.
+	 * </br> Parameters are given in [0.0, 1.0].
 	 * 
-	 * @return  the color's hsba values
+	 * @return  a set of hsba values
 	 */
 	public float[] HSBA()
 	{
@@ -119,9 +120,9 @@ public class Color
 	
 	/**
 	 * Returns the rgb values of the {@code Color}.
-	 * <br> The values are presented between 0.0 and 1.0.
+	 * </br> Parameters are given in [0.0, 1.0].
 	 * 
-	 * @return  the color's rgb values
+	 * @return  a set of rgb values
 	 */
 	public float[] RGB()
 	{
@@ -130,9 +131,9 @@ public class Color
 	
 	/**
 	 * Returns the hsb values of the {@code Color}.
-	 * <br> The values are presented between 0.0 and 1.0.
+	 * </br> Parameters are given in [0.0, 1.0].
 	 * 
-	 * @return  the color's hsb values
+	 * @return  a set of hsb values
 	 */
 	public float[] HSB()
 	{
@@ -147,6 +148,7 @@ public class Color
 	
 	/**
 	 * Returns the hex code of the {@code Color}.
+	 * </br> Hex codes are given as {@code 0xrrggbbaa}.
 	 * 
 	 * @return  a color hex code
 	 */

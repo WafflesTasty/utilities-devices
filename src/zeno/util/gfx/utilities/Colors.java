@@ -71,12 +71,15 @@ public final class Colors
 	
 	/**
 	 * Creates a color from an HSB color value.
+	 * </br> Parameters are given in [0.0, 1.0].
 	 * 
 	 * @param h  a hue value
 	 * @param s  a saturation value
 	 * @param b  a brightness value
 	 * @param a  an alpha value
-	 * @return  a new color
+	 * @return   a color
+	 * 
+	 * 
 	 * @see Color
 	 */
 	public static Color fromHSBA(float h, float s, float b, float a)
@@ -88,11 +91,14 @@ public final class Colors
 		
 	/**
 	 * Creates a color from an HSB color value.
+	 * </br> Parameters are given in [0.0, 1.0].
 	 * 
 	 * @param h  a hue value
 	 * @param s  a saturation value
 	 * @param b  a brightness value
-	 * @return  a new color
+	 * @return   a color
+	 * 
+	 * 
 	 * @see Color
 	 */
 	public static Color fromHSB(float h, float s, float b)
@@ -146,9 +152,10 @@ public final class Colors
 	
 	/**
 	 * Creates a color from a 6-digit hex string.
+	 * </br> Hex codes are given as {@code 0xrrggbbaa}.
 	 * 
-	 * @param text  a hexadecimal string.
-	 * @return  a corresponding color
+	 * @param text  a hexadecimal string
+	 * @return  a color
 	 * 
 	 * 
 	 * @see String
@@ -163,6 +170,9 @@ public final class Colors
 	 * Returns a random {@code Color}.
 	 * 
 	 * @return  a random color
+	 * 
+	 * 
+	 * @see Color
 	 */
 	public static Color random()
 	{
