@@ -1,8 +1,8 @@
 package zeno.util.gfx;
 
 import zeno.util.coll.hashed.dict.ClassMap;
-import zeno.util.gfx.memory.Generator;
-import zeno.util.gfx.memory.Validator;
+import zeno.util.gfx.utilities.Generator;
+import zeno.util.gfx.utilities.Validator;
 import zeno.util.tools.patterns.manipulators.Disposable;
 import zeno.util.tools.patterns.properties.Discernible;
 
