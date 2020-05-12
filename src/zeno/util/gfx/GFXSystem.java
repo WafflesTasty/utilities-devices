@@ -1,6 +1,6 @@
 package zeno.util.gfx;
 
-import zeno.util.gfx.system.GFXFrame;
+import zeno.util.gfx.system.GFXWindow;
 import zeno.util.gfx.system.GFXMemory;
 
 /**
@@ -28,7 +28,7 @@ public interface GFXSystem
 	 * @return  a rendering window
 	 * 
 	 * 
-	 * @see GFXFrame
+	 * @see GFXWindow
 	 */
-	public abstract GFXFrame Window();
+	public abstract GFXWindow Window();
 }
