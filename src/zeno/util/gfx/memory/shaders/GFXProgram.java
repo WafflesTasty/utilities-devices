@@ -21,7 +21,7 @@ public interface GFXProgram extends GFXMemory.Data, Activator, Loadable
 	/**
 	 * Adds a shader to the {@code GFXProgram}.
 	 * 
-	 * @param shader  a shader to add
+	 * @param shader  a program shader
 	 * 
 	 * 
 	 * @see GFXShader
@@ -31,7 +31,7 @@ public interface GFXProgram extends GFXMemory.Data, Activator, Loadable
 	/**
 	 * Removes a shader from the {@code GFXProgram}.
 	 * 
-	 * @param shader  a shader to remove
+	 * @param shader  a program shader
 	 * 
 	 * 
 	 * @see GFXShader

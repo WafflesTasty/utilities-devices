@@ -1,42 +1,41 @@
 package zeno.util.gfx.memory.shaders;
 
 import zeno.util.gfx.GFXMemory;
-import zeno.util.tools.patterns.manipulators.Disposable;
-import zeno.util.tools.patterns.manipulators.Loadable;
-import zeno.util.tools.patterns.properties.Discernible;
 
 /**
- * The {@code GFXShader} interface defines a shader stage generated in {@link GFXMemory}.
+ * The {@code GFXShader} interface defines a shader stage in a {@code GFXProgram}.
  * 
- * @since Sep 18, 2016
  * @author Zeno
+ * @since Sep 18, 2016
+ * @version 1.0
  * 
- * @see Discernible
- * @see Disposable
- * @see Loadable
+ * 
+ * @see GFXMemory
  */
-public interface GFXShader extends Discernible, Disposable, Loadable
+public interface GFXShader extends GFXMemory.Data
 {
 	/**
-	 * The {@code Type} enum defines the different types of shaders.
+	 * The {@code Type} enum defines the type of a {@code GFXShader}.
 	 * 
-	 * @since Sep 8, 2016
 	 * @author Zeno
+	 * @since Sep 8, 2016
+	 * @version 1.0
+	 * 
 	 * 
 	 * @see GFXShader
 	 */
 	public static enum Type
 	{
 		/**
-		 * A vertex shader.
+		 * A vertex input shader.
 		 */
 		VERTEX,
 		/**
-		 * A fragment shader.
+		 * A fragment output shader.
 		 */
 		FRAGMENT,
 		/**
-		 * A geometry shader.
+		 * A vertex geometry shader.
 		 */
 		GEOMETRY,
 		/**
@@ -53,18 +52,22 @@ public interface GFXShader extends Discernible, Disposable, Loadable
 		COMPUTE;
 	}
 
-		
+	
 	/**
-	 * Changes the source code of the {@code GFXShader}.
+	 * Loads a source code into the {@code GFXShader}.
 	 * 
-	 * @param source  a new source code
+	 * @param source  a source code
+	 * @return  {@code true} if successful
+	 * 
+	 * 
+	 * @see String
 	 */
-	public abstract void setSource(String source);
-
+	public abstract boolean load(String source);
+	
 	/**
-	 * Returns the error message of the {@code GFXShader}.
+	 * Returns an error from the {@code GFXShader}.
 	 * 
 	 * @return  the shader's error message
 	 */
-	public abstract String getErrorMessage();
+	public abstract String ErrorMessage();
 }
