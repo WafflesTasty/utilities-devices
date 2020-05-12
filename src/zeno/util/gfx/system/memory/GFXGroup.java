@@ -4,7 +4,7 @@ import zeno.util.gfx.system.GFXMemory;
 import zeno.util.tools.patterns.manipulators.Activator;
 
 /**
- * The {@code GFXGroup} interface defines a vertex format group generated in {@code GFXMemory}.
+ * The {@code GFXGroup} interface defines a vertex format group used in a {@code GFXProgram}.
  * 
  * @author Zeno
  * @since Sep 8, 2016
