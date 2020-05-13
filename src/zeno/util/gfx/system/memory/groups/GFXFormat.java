@@ -36,9 +36,16 @@ public interface GFXFormat extends GFXMemory.Data
 	public abstract void setBuffer(GFXBuffer buffer);
 	
 	/**
-	 * Returns the size of the {@code GFXFormat}.
+	 * Returns the byte size of the {@code GFXFormat}.
 	 * 
 	 * @return  a byte size
 	 */
 	public abstract int ByteSize();
+	
+	/**
+	 * Returns the data count of the {@code GFXFormat}.
+	 * 
+	 * @return  a data count
+	 */
+	public abstract int Count();
 }
