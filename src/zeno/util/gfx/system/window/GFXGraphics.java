@@ -8,7 +8,7 @@ import zeno.util.gfx.system.window.graphics.GFXViewports;
 import zeno.util.tools.patterns.manipulators.Resettable;
 
 /**
- * The {@code GFXGraphics} interface executes draw calls on a {@code GFXWindow}.
+ * The {@code GFXGraphics} interface executes draw commands on a {@code GFXWindow}.
  * 
  * @author Zeno
  * @since Sep 12, 2016
