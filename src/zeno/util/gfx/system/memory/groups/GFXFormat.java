@@ -1,7 +1,7 @@
 package zeno.util.gfx.system.memory.groups;
 
 import zeno.util.gfx.system.GFXMemory;
-import zeno.util.gfx.system.memory.data.GFXBuffer;
+import zeno.util.gfx.system.memory.buffers.GFXBuffer;
 
 /**
  * The {@code GFXFormat} interface defines a data format for a {@code GFXBuffer}.

@@ -1,4 +1,4 @@
-package zeno.util.gfx.system.memory.data;
+package zeno.util.gfx.system.memory.buffers;
 
 import java.nio.ByteBuffer;
 

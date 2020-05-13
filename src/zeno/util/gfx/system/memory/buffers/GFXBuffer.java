@@ -1,8 +1,8 @@
-package zeno.util.gfx.system.memory.data;
+package zeno.util.gfx.system.memory.buffers;
 
 import zeno.util.data.memory.Buffer;
 import zeno.util.gfx.system.GFXMemory;
-import zeno.util.gfx.system.memory.data.GFXBuffer.Layout.Access;
+import zeno.util.gfx.system.memory.buffers.GFXBuffer.Layout.Access;
 
 /**
  * The {@code GFXBuffer} interface handles raw byte data in a graphics buffer.

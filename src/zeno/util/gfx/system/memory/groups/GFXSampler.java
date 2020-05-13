@@ -1,7 +1,7 @@
 package zeno.util.gfx.system.memory.groups;
 
 import zeno.util.gfx.system.GFXMemory;
-import zeno.util.gfx.system.memory.data.GFXAsset;
+import zeno.util.gfx.system.memory.buffers.GFXAsset;
 
 /**
  * The {@code GFXSampler} interface defines a sampler in a {@code GFXGroup}.
