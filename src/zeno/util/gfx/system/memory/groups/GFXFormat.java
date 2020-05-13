@@ -14,7 +14,17 @@ import zeno.util.gfx.system.memory.data.GFXBuffer;
  * @see GFXMemory
  */
 public interface GFXFormat extends GFXMemory.Data
-{	
+{
+	/**
+	 * Adds a data field to the {@code GFXFormat}.
+	 * 
+	 * @param field  a data field
+	 * 
+	 * 
+	 * @see GFXField
+	 */
+	public abstract void add(GFXField field);
+	
 	/**
 	 * Changes the data buffer of the {@code GFXFormat}.
 	 * 
@@ -26,12 +36,9 @@ public interface GFXFormat extends GFXMemory.Data
 	public abstract void setBuffer(GFXBuffer buffer);
 	
 	/**
-	 * Adds a data field to the {@code GFXFormat}.
+	 * Returns the size of the {@code GFXFormat}.
 	 * 
-	 * @param field  a data field
-	 * 
-	 * 
-	 * @see GFXField
+	 * @return  a byte size
 	 */
-	public abstract void addField(GFXField field);
+	public abstract int ByteSize();
 }

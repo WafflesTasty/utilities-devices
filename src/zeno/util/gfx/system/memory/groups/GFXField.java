@@ -72,11 +72,21 @@ public interface GFXField extends GFXMemory.Data, Activator
 	}
 	
 	/**
-	 * Changes the offset of the {@code GFXField}.
+	 * Changes the data offset of the {@code GFXField}.
 	 * 
 	 * @param offset  a byte offset
 	 */
 	public abstract void setOffset(int offset);	
+
+	/**
+	 * Returns the overflow of the {@code GFXField}.
+	 * 
+	 * @return  a field overflow
+	 */
+	public default GFXField[] Overflow()
+	{
+		return new GFXField[0];
+	}
 	
 
 	/**
