@@ -1,6 +1,7 @@
 package zeno.util.gfx.system.memory;
 
 import zeno.util.gfx.system.GFXMemory;
+import zeno.util.gfx.system.memory.buffers.GFXBuffer;
 import zeno.util.tools.patterns.manipulators.Activator;
 
 /**
@@ -16,5 +17,10 @@ import zeno.util.tools.patterns.manipulators.Activator;
  */
 public interface GFXGroup extends GFXMemory.Data, Activator
 {		
-	// NOT APPLICABLE
+	/**
+	 * Changes the index buffer of the {@code GFXGroup}.
+	 * 
+	 * @param b  a target buffer
+	 */
+	public abstract void setIndex(GFXBuffer b);
 }
