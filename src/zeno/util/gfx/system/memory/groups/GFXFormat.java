@@ -16,7 +16,17 @@ import zeno.util.gfx.system.memory.buffers.GFXBuffer;
 public interface GFXFormat extends GFXMemory.Data
 {
 	/**
-	 * Adds a data field to the {@code GFXFormat}.
+	 * Changes the data buffer of the {@code GFXFormat}.
+	 * 
+	 * @param b  a data buffer
+	 * 
+	 * 
+	 * @see GFXBuffer
+	 */
+	public abstract void setData(GFXBuffer b);
+	
+	/**
+	 * Adds a vertex data field to the {@code GFXFormat}.
 	 * 
 	 * @param field  a data field
 	 * 
@@ -24,17 +34,7 @@ public interface GFXFormat extends GFXMemory.Data
 	 * @see GFXField
 	 */
 	public abstract void add(GFXField field);
-	
-	/**
-	 * Changes the data buffer of the {@code GFXFormat}.
-	 * 
-	 * @param buffer  a data buffer
-	 * 
-	 * 
-	 * @see GFXBuffer
-	 */
-	public abstract void setBuffer(GFXBuffer buffer);
-	
+		
 	/**
 	 * Returns the byte size of the {@code GFXFormat}.
 	 * 
