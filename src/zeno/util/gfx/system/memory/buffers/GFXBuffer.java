@@ -31,16 +31,14 @@ public interface GFXBuffer extends GFXMemory.Data, Buffer
 		 * 
 		 * @param access  a buffer access hint
 		 * @param rate    a buffer rate hint
-		 * @param type    a buffer type
 		 * @param size    a buffer size
 		 * @return  a buffer layout
 		 * 
 		 * 
 		 * @see Access
 		 * @see Rate
-		 * @see Type
 		 */
-		public static Layout create(Access access, Rate rate, Type type, int size)
+		public static Layout create(Access access, Rate rate, int size)
 		{
 			return new Layout()
 			{				
@@ -57,12 +55,6 @@ public interface GFXBuffer extends GFXMemory.Data, Buffer
 				}
 				
 				@Override
-				public Type Type()
-				{
-					return type;
-				}
-				
-				@Override
 				public int Size()
 				{
 					return size;
@@ -75,17 +67,15 @@ public interface GFXBuffer extends GFXMemory.Data, Buffer
 		 * </br> Access is set to draw by default.
 		 * 
 		 * @param rate   a buffer rate hint
-		 * @param type   a buffer type
 		 * @param size   a buffer size
 		 * @return  a buffer layout
 		 * 
 		 * 
 		 * @see Rate
-		 * @see Type
 		 */
-		public static Layout create(Rate rate, Type type, int size)
+		public static Layout create(Rate rate, int size)
 		{
-			return create(Access.WRITE, rate, type, size);
+			return create(Access.WRITE, rate, size);
 		}
 		
 		/**
@@ -93,16 +83,12 @@ public interface GFXBuffer extends GFXMemory.Data, Buffer
 		 * </br> Access is set to draw by default.
 		 * Rate is set to dynamic by default.
 		 * 
-		 * @param type   a buffer type
 		 * @param size   a buffer size
 		 * @return  a buffer layout
-		 * 
-		 * 
-		 * @see Type
 		 */
-		public static Layout create(Type type, int size)
+		public static Layout create(int size)
 		{
-			return create(Access.WRITE, Rate.DYNAMIC, type, size);
+			return create(Access.WRITE, Rate.DYNAMIC, size);
 		}		
 		
 		
@@ -222,16 +208,6 @@ public interface GFXBuffer extends GFXMemory.Data, Buffer
 		{
 			return Access.WRITE;
 		}
-		
-		/**
-		 * Returns the buffer type of the {@code Layout}.
-		 * 
-		 * @return  a buffer type
-		 * 
-		 * 
-		 * @see Type
-		 */
-		public abstract Type Type();
 		
 		/**
 		 * Returns the size of the {@code Layout}.
