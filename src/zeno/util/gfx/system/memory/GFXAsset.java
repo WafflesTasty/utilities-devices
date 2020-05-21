@@ -1,9 +1,6 @@
-package zeno.util.gfx.system.memory.buffers;
-
-import java.nio.ByteBuffer;
+package zeno.util.gfx.system.memory;
 
 import zeno.util.algebra.linear.vector.Vector;
-import zeno.util.data.handlers.Image;
 import zeno.util.gfx.system.GFXMemory;
 
 /**
@@ -158,30 +155,6 @@ public interface GFXAsset extends GFXMemory.Data
 			setBorder(border, border, border);
 		}
 	}
-
-	
-	/**
-	 * Loads data into a detail level of the {@code GFXAsset}.
-	 * 
-	 * @param data  a data buffer to load
-	 * @param lod   a target level of detail
-	 * @param size  an asset dimension
-	 * 
-	 * 
-	 * @see ByteBuffer
-	 */
-	public abstract void load(ByteBuffer data, int lod, int... size);
-	
-	/**
-	 * Loads an image into a detail level of the {@code GFXAsset}.
-	 * 
-	 * @param image  an image to load
-	 * @param lod    a target level of detail
-	 * 
-	 * 
-	 * @see Image
-	 */
-	public abstract void load(Image image, int lod);
 	
 	
 	/**
