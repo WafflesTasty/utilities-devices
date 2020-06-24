@@ -67,6 +67,13 @@ public interface GFXDepthTest extends Resettable
 
 	
 	/**
+	 * Changes the writeability of the {@code GFXDepthTest}.
+	 * 
+	 * @param isReadOnly  a writeability state
+	 */
+	public abstract void setReadOnly(boolean isReadOnly);
+	
+	/**
 	 * Changes the bound values of the {@code GFXDepthTest}.
 	 * Fragments will be disregarded if they fall outside
 	 * these bounds, which must be within the
