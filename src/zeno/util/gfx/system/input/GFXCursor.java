@@ -1,6 +1,7 @@
 package zeno.util.gfx.system.input;
 
 import zeno.util.gfx.system.GFXMemory;
+import zeno.util.tools.patterns.properties.Handler;
 
 /**
  * The {@code GFXCursor} interface defines a cursor generated in {@code GFXMemory}.
@@ -11,8 +12,9 @@ import zeno.util.gfx.system.GFXMemory;
  * 
  * 
  * @see GFXMemory
+ * @see Handler
  */
-public interface GFXCursor extends GFXMemory.Data
+public interface GFXCursor extends GFXMemory.Data, Handler
 {
 	// NOT APPLICABLE
 }
