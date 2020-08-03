@@ -1,7 +1,7 @@
 package zeno.util.gfx.system;
 
 import zeno.util.algebra.linear.matrix.fixed.Matrix4x4;
-import zeno.util.coll.hashed.dict.ClassMap;
+import zeno.util.coll.dictionary.maps.ClassMap;
 import zeno.util.gfx.utilities.Generator;
 import zeno.util.gfx.utilities.Validator;
 import zeno.util.tools.patterns.manipulators.Disposable;
