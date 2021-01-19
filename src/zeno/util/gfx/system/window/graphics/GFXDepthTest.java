@@ -93,4 +93,9 @@ public interface GFXDepthTest extends Resettable
 	 * @see Method
 	 */
 	public abstract void setMethod(Method method);
+	
+	/**
+	 * Clears the buffer of the {@code GFXDepthTest}.
+	 */
+	public abstract void clear();
 }
