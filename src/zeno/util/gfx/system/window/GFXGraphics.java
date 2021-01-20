@@ -333,6 +333,11 @@ public interface GFXGraphics extends Resettable
 		drawVertices(mode, vCount, 0);
 	}
 	
+	/**
+	 * Clears the {@code GFXGraphics}.
+	 */
+	public abstract void clear();
+	
 	
 	@Override
 	public default void reset()

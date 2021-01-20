@@ -1,6 +1,7 @@
 package zeno.util.gfx.system.memory;
 
 import zeno.util.gfx.system.GFXMemory;
+import zeno.util.gfx.system.window.GFXGraphics;
 
 /**
  * The {@code GFXLayer} interface defines a window layer to draw into.
@@ -13,13 +14,17 @@ import zeno.util.gfx.system.GFXMemory;
  * @see GFXMemory
  */
 public interface GFXLayer extends GFXMemory.Data
-{
+{	
 	/**
-	 * Returns the width of the {@code GFXLayer}.
+	 * Draws the {@code GFXLayer} on the screen.
 	 * 
-	 * @return  a layer width
+	 * @param g  a graphics object
+	 * 
+	 * 
+	 * @see GFXGraphics
 	 */
-	public abstract int Width();
+	public abstract void draw(GFXGraphics g);
+	
 	
 	/**
 	 * Returns the height of the {@code GFXLayer}.
@@ -27,4 +32,11 @@ public interface GFXLayer extends GFXMemory.Data
 	 * @return  a layer height
 	 */
 	public abstract int Height();
+
+	/**
+	 * Returns the width of the {@code GFXLayer}.
+	 * 
+	 * @return  a layer width
+	 */
+	public abstract int Width();
 }
