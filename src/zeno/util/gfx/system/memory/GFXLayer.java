@@ -1,8 +1,6 @@
 package zeno.util.gfx.system.memory;
 
 import zeno.util.gfx.system.GFXMemory;
-import zeno.util.tools.patterns.manipulators.Disposable;
-import zeno.util.tools.patterns.properties.Discernible;
 
 /**
  * The {@code GFXLayer} interface defines a window layer to draw into.
@@ -12,11 +10,21 @@ import zeno.util.tools.patterns.properties.Discernible;
  * @version 1.0
  * 
  * 
- * @see Discernible
- * @see Disposable
  * @see GFXMemory
  */
 public interface GFXLayer extends GFXMemory.Data
 {
-	// NOT APPLICABLE
+	/**
+	 * Returns the width of the {@code GFXLayer}.
+	 * 
+	 * @return  a layer width
+	 */
+	public abstract int Width();
+	
+	/**
+	 * Returns the height of the {@code GFXLayer}.
+	 * 
+	 * @return  a layer height
+	 */
+	public abstract int Height();
 }
