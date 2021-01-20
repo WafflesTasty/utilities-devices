@@ -2,6 +2,7 @@ package zeno.util.gfx.system.window;
 
 import zeno.util.gfx.system.window.graphics.GFXBlending;
 import zeno.util.gfx.system.window.graphics.GFXDepthTest;
+import zeno.util.gfx.system.window.graphics.GFXDrawLayers;
 import zeno.util.gfx.system.window.graphics.GFXScissorTest;
 import zeno.util.gfx.system.window.graphics.GFXTesselation;
 import zeno.util.gfx.system.window.graphics.GFXViewports;
@@ -112,7 +113,7 @@ public interface GFXGraphics extends Resettable
 	 * @see GFXDepthTest
 	 */
 	public abstract GFXDepthTest DepthTest();
-	
+		
 	/**
 	 * Returns scissor test options of the {@code GFXGraphics}.
 	 * 
@@ -132,7 +133,7 @@ public interface GFXGraphics extends Resettable
 	 * @see GFXTesselation
 	 */
 	public abstract GFXTesselation Tesselation();
-	
+		
 	/**
 	 * Returns viewport options of the {@code GFXGraphics}.
 	 * 
@@ -142,6 +143,16 @@ public interface GFXGraphics extends Resettable
 	 * @see GFXViewports
 	 */
 	public abstract GFXViewports Viewports();
+	
+	/**
+	 * Returns layer options of the {@code GFXGraphics}.
+	 * 
+	 * @return  a set of layer options
+	 * 
+	 * 
+	 * @see GFXDrawLayers
+	 */
+	public abstract GFXDrawLayers Layers();
 	
 	
 	/**
@@ -331,5 +342,6 @@ public interface GFXGraphics extends Resettable
 		ScissorTest().reset();
 		Tesselation().reset();
 		Viewports().reset();
+		Layers().reset();
 	}
 }
