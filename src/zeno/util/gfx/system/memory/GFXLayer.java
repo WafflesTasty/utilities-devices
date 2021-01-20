@@ -1,5 +1,6 @@
-package zeno.util.gfx.system.window;
+package zeno.util.gfx.system.memory;
 
+import zeno.util.gfx.system.GFXMemory;
 import zeno.util.tools.patterns.manipulators.Disposable;
 import zeno.util.tools.patterns.properties.Discernible;
 
@@ -13,8 +14,9 @@ import zeno.util.tools.patterns.properties.Discernible;
  * 
  * @see Discernible
  * @see Disposable
+ * @see GFXMemory
  */
-public interface GFXLayer extends Discernible, Disposable
+public interface GFXLayer extends GFXMemory.Data
 {
 	// NOT APPLICABLE
 }
