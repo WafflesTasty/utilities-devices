@@ -149,6 +149,15 @@ public interface GFXBlending extends Resettable
 		MAX;
 	}
 	
+	
+	/**
+	 * Enables standard {@code GFXBlending}.
+	 */
+	public default void standard()
+	{
+		setColorMethod(Method.ADD, Factor.SRC_ALPHA, Factor.ONE_MINUS_SRC_ALPHA);
+		setAlphaMethod(Method.MAX, Factor.ONE, Factor.ONE);
+	}
 
 	/**
 	 * Changes the method of the {@code GFXBlending}.

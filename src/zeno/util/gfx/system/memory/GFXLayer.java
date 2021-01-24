@@ -14,9 +14,9 @@ import zeno.util.gfx.system.window.GFXGraphics;
  * @see GFXMemory
  */
 public interface GFXLayer extends GFXMemory.Data
-{	
+{		
 	/**
-	 * Draws the {@code GFXLayer} on the screen.
+	 * Draws graphics onto the {@code GFXLayer}.
 	 * 
 	 * @param g  a graphics object
 	 * 
@@ -24,7 +24,6 @@ public interface GFXLayer extends GFXMemory.Data
 	 * @see GFXGraphics
 	 */
 	public abstract void draw(GFXGraphics g);
-	
 	
 	/**
 	 * Returns the height of the {@code GFXLayer}.
