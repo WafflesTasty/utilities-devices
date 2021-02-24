@@ -2,6 +2,7 @@ package zeno.util.gfx.system.memory;
 
 import zeno.util.gfx.system.GFXMemory;
 import zeno.util.gfx.system.window.GFXGraphics;
+import zeno.util.tools.patterns.manipulators.Activator;
 
 /**
  * The {@code GFXLayer} interface defines a window layer to draw into.
@@ -11,19 +12,29 @@ import zeno.util.gfx.system.window.GFXGraphics;
  * @version 1.0
  * 
  * 
+ * @see Activator
  * @see GFXMemory
  */
-public interface GFXLayer extends GFXMemory.Data
+public interface GFXLayer extends GFXMemory.Data, Activator
 {		
+	public abstract void attach(GFXAsset asset, int index);
+	
+	public abstract void setTarget(int index);
+	
+	public default void draw(GFXGraphics g)
+	{
+		
+	}
+	
 	/**
-	 * Draws graphics onto the {@code GFXLayer}.
+	 * Returns the texture of the {@code GFXLayer}.
 	 * 
-	 * @param g  a graphics object
+	 * @return  a layer texture
 	 * 
 	 * 
-	 * @see GFXGraphics
+	 * @see GFXAsset
 	 */
-	public abstract void draw(GFXGraphics g);
+	public abstract GFXAsset Texture();
 	
 	/**
 	 * Returns the height of the {@code GFXLayer}.
