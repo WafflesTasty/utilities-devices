@@ -1,8 +1,8 @@
 package zeno.util.gfx.system.memory;
 
 import zeno.util.gfx.system.GFXMemory;
-import zeno.util.gfx.system.window.GFXGraphics;
 import zeno.util.tools.patterns.manipulators.Activator;
+import zeno.util.tools.patterns.manipulators.Loadable;
 
 /**
  * The {@code GFXLayer} interface defines a window layer to draw into.
@@ -12,41 +12,32 @@ import zeno.util.tools.patterns.manipulators.Activator;
  * @version 1.0
  * 
  * 
- * @see Activator
  * @see GFXMemory
+ * @see Activator
+ * @see Loadable
  */
-public interface GFXLayer extends GFXMemory.Data, Activator
-{		
-	public abstract void attach(GFXAsset asset, int index);
-	
-	public abstract void setTarget(int index);
-	
-	public default void draw(GFXGraphics g)
-	{
-		
-	}
-	
+public interface GFXLayer extends GFXMemory.Data, Activator, Loadable
+{			
 	/**
-	 * Returns the texture of the {@code GFXLayer}.
+	 * Attaches a renderable asset into in the {@code GFXLayer}.
 	 * 
-	 * @return  a layer texture
+	 * @param asset  a target asset
+	 * @param index  a target index
 	 * 
 	 * 
 	 * @see GFXAsset
 	 */
-	public abstract GFXAsset Texture();
+	public abstract void attach(GFXAsset asset, int index);
 	
 	/**
-	 * Returns the height of the {@code GFXLayer}.
+	 * Changes the active target of the {@code GFXLayer}.
 	 * 
-	 * @return  a layer height
+	 * @param index  a target index
 	 */
-	public abstract int Height();
-
+	public abstract void setTarget(int index);
+	
 	/**
-	 * Returns the width of the {@code GFXLayer}.
-	 * 
-	 * @return  a layer width
+	 * Clears the {@code GFXLayer}.
 	 */
-	public abstract int Width();
+	public abstract void clear();
 }
