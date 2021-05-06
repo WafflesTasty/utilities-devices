@@ -1,5 +1,6 @@
 package zeno.util.gfx.system.window;
 
+import zeno.util.geom.Simplex.Mode;
 import zeno.util.gfx.system.window.graphics.GFXBlending;
 import zeno.util.gfx.system.window.graphics.GFXDepthTest;
 import zeno.util.gfx.system.window.graphics.GFXScissorTest;
@@ -19,80 +20,6 @@ import zeno.util.tools.patterns.manipulators.Resettable;
  */
 public interface GFXGraphics extends Resettable
 {
-	/**
-	 * The {@code Mode} enum defines primitive draw modes.
-	 * 
-	 * @author Zeno
-	 * @since Sep 11, 2016
-	 * @version 1.0
-	 * 
-	 * 
-	 * @see GFXGraphics
-	 */
-	public static enum Mode
-	{
-		/**
-		 * Each vertex is handled as a separate point.
-		 */
-		POINTS,
-		
-		/**
-		 * Each vertex is connected with the last in a line.
-		 */
-		LINE_STRIP,
-		/**
-		 * Each vertex is connected with the last in a line.
-		 * </br> The first and the last connect to make a closed loop.
-		 */
-		LINE_LOOP,
-		/**
-		 * Each pair of two separate vertices form a line.
-		 */
-		LINES,
-		
-		/**
-		 * Adjacent version of {@code LINE_STRIP} for use
-		 * with geometry shaders.
-		 */
-		LINE_STRIP_ADJ,
-		/**
-		 * Adjacent version of {@code LINES} for use
-		 * with geometry shaders.
-		 */
-		LINES_ADJ,
-		
-		/**
-		 * Each pair of three adjacent vertices form a triangle.
-		 */
-		TRIANGLE_STRIP,
-		/**
-		 * Each pair of two adjacent vertices form a triangle
-		 * with the first vertex as its third.
-		 */
-		TRIANGLE_FAN,
-		/**
-		 * Each pair of three separate vertices form a triangle.
-		 */
-		TRIANGLES,
-		
-		/**
-		 * Adjacent version of {@code TRIANGLE_STRIP} for use
-		 * with geometry shaders.
-		 */
-		TRIANGLE_STRIP_ADJ,
-		/**
-		 * Adjacent version of {@code TRIANGLES} for use
-		 * with geometry shaders.
-		 */
-		TRIANGLES_ADJ,
-		
-		/**
-		 * Vertices are handled by the tesselation shaders.
-		 */
-		PATCHES;
-	}
-	
-	
 	/**
 	 * Returns blending options of the {@code GFXGraphics}.
 	 * 
