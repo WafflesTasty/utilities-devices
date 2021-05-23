@@ -1,6 +1,6 @@
 package zeno.util.gfx.system.window;
 
-import zeno.util.geom.Simplex.Mode;
+import zeno.util.geom.utilities.VChain.Mode;
 import zeno.util.gfx.system.window.graphics.GFXBlending;
 import zeno.util.gfx.system.window.graphics.GFXDepthTest;
 import zeno.util.gfx.system.window.graphics.GFXScissorTest;
