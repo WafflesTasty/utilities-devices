@@ -1,5 +1,6 @@
 package zeno.util.gfx.system.memory;
 
+import zeno.util.algebra.linear.vector.fixed.Vector2;
 import zeno.util.gfx.system.GFXMemory;
 import zeno.util.tools.patterns.manipulators.Activator;
 import zeno.util.tools.patterns.manipulators.Loadable;
@@ -17,7 +18,38 @@ import zeno.util.tools.patterns.manipulators.Loadable;
  * @see Loadable
  */
 public interface GFXLayer extends GFXMemory.Data, Activator, Loadable
-{			
+{
+	/**
+	 * Returns the height of the {@code GFXLayer}.
+	 * 
+	 * @return  a layer height
+	 */
+	public default float Height()
+	{
+		return Dimension().Y();
+	}
+	
+	/**
+	 * Returns the width of the {@code GFXLayer}.
+	 * 
+	 * @return  a layer width
+	 */
+	public default float Width()
+	{
+		return Dimension().X();
+	}
+	
+	
+	/**
+	 * Returns the dimension of the {@code GFXLayer}.
+	 * 
+	 * @return  a dimension vector
+	 * 
+	 * 
+	 * @see Vector2
+	 */
+	public abstract Vector2 Dimension();
+	
 	/**
 	 * Attaches a renderable asset into in the {@code GFXLayer}.
 	 * 
