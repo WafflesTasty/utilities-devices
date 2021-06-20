@@ -75,15 +75,19 @@ public interface GFXAsset extends GFXMemory.Data
 		public static enum Border
 		{
 			/**
-			 * Clamp co�rdinates to the edge of the {@code GFXAsset}.
+			 * Do not draw beyond the edge of the {@code GFXAsset}.
+			 */
+			NONE,
+			/**
+			 * Clamp coordinates to the edge of the {@code GFXAsset}.
 			 */
 			CLAMP_TO_EDGE,
 			/**
-			 * Mirror and repeat co�rdinates of the {@code GFXAsset}.
+			 * Mirror and repeat coordinates of the {@code GFXAsset}.
 			 */
 			MIRROR_REPEAT,
 			/**
-			 * Repeat co�rdinates of the {@code GFXAsset}.
+			 * Repeat coordinates of the {@code GFXAsset}.
 			 */
 			REPEAT,
 		}
