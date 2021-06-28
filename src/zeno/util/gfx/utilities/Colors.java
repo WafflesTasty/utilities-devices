@@ -70,6 +70,43 @@ public final class Colors
 
 	
 	/**
+	 * Adds the values of two colors together.
+	 * 
+	 * @param c1  a first color
+	 * @param c2  a second color
+	 * @return  an added color
+	 */
+	public static Color add(Color c1, Color c2)
+	{
+		float r = Floats.clamp(c1.RGBA()[0] + c2.RGBA()[0], 0f, 1f);
+		float g = Floats.clamp(c1.RGBA()[1] + c2.RGBA()[1], 0f, 1f);
+		float b = Floats.clamp(c1.RGBA()[2] + c2.RGBA()[2], 0f, 1f);
+		float a = Floats.clamp(c1.RGBA()[3] + c2.RGBA()[3], 0f, 1f);
+		
+		return new Color(r, g, b, a);
+	}
+	
+	/**
+	 * Scales a color with a float value.
+	 * 
+	 * @param c    a color to scale
+	 * @param val  a scale value
+	 * @return  a scaled color
+	 * 
+	 * 
+	 * @see Color
+	 */
+	public static Color scale(Color c, float val)
+	{
+		float r = Floats.clamp(c.RGBA()[0] * val, 0f, 1f);
+		float g = Floats.clamp(c.RGBA()[1] * val, 0f, 1f);
+		float b = Floats.clamp(c.RGBA()[2] * val, 0f, 1f);
+		float a = c.RGBA()[3];
+		
+		return new Color(r, g, b, a);
+	}
+	
+	/**
 	 * Creates a color from an HSB color value.
 	 * </br> Parameters are given in [0.0, 1.0].
 	 * 

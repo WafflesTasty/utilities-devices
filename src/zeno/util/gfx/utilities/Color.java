@@ -146,6 +146,17 @@ public class Color
 		);
 	}
 	
+	
+	/**
+	 * Returns the brightness of the {@code Color}.
+	 * 
+	 * @return  a brightness value
+	 */
+	public float Brightness()
+	{
+		return Floats.max(rgba[0], rgba[1], rgba[2]);
+	}
+	
 	/**
 	 * Returns the hex code of the {@code Color}.
 	 * </br> Hex codes are given as {@code 0xrrggbbaa}.
