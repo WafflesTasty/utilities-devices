@@ -6,6 +6,7 @@ import zeno.util.gfx.system.window.graphics.GFXDepthTest;
 import zeno.util.gfx.system.window.graphics.GFXScissorTest;
 import zeno.util.gfx.system.window.graphics.GFXTesselation;
 import zeno.util.gfx.system.window.graphics.GFXViewports;
+import zeno.util.gfx.utilities.Color;
 import zeno.util.tools.patterns.manipulators.Resettable;
 
 /**
@@ -249,10 +250,24 @@ public interface GFXGraphics extends Resettable
 		drawVertices(mode, vCount, 0);
 	}
 	
+	
+	/**
+	 * Clears the {@code GFXGraphics}.
+	 * 
+	 * @param c  a base color
+	 * 
+	 * 
+	 * @see Color
+	 */
+	public abstract void clear(Color c);
+	
 	/**
 	 * Clears the {@code GFXGraphics}.
 	 */
-	public abstract void clear();
+	public default void clear()
+	{
+		clear(new Color(0f, 0f, 0f, 0f));
+	}
 	
 	
 	@Override

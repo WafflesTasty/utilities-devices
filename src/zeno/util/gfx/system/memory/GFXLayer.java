@@ -2,6 +2,7 @@ package zeno.util.gfx.system.memory;
 
 import zeno.util.algebra.linear.vector.fixed.Vector2;
 import zeno.util.gfx.system.GFXMemory;
+import zeno.util.gfx.utilities.Color;
 import zeno.util.tools.patterns.manipulators.Activator;
 import zeno.util.tools.patterns.manipulators.Loadable;
 
@@ -70,6 +71,19 @@ public interface GFXLayer extends GFXMemory.Data, Activator, Loadable
 	
 	/**
 	 * Clears the {@code GFXLayer}.
+	 * 
+	 * @param c  a base color
+	 * 
+	 * 
+	 * @see Color
 	 */
-	public abstract void clear();
+	public abstract void clear(Color c);
+	
+	/**
+	 * Clears the {@code GFXLayer}.
+	 */
+	public default void clear()
+	{
+		clear(new Color(0f, 0f, 0f, 0f));
+	}
 }
