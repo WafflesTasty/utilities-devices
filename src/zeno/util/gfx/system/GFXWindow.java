@@ -15,7 +15,7 @@ import zeno.util.tools.patterns.manipulators.Disposable;
  * @see Disposable
  */
 public interface GFXWindow extends Disposable
-{	
+{		
 	/**
 	 * Returns the graphics of the {@code GFXWindow}.
 	 * 

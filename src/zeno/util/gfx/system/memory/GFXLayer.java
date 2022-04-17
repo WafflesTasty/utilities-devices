@@ -3,7 +3,6 @@ package zeno.util.gfx.system.memory;
 import zeno.util.algebra.linear.vector.fixed.Vector2;
 import zeno.util.gfx.system.GFXMemory;
 import zeno.util.gfx.utilities.Color;
-import zeno.util.tools.patterns.manipulators.Activator;
 import zeno.util.tools.patterns.manipulators.Loadable;
 
 /**
@@ -15,10 +14,9 @@ import zeno.util.tools.patterns.manipulators.Loadable;
  * 
  * 
  * @see GFXMemory
- * @see Activator
  * @see Loadable
  */
-public interface GFXLayer extends GFXMemory.Data, Activator, Loadable
+public interface GFXLayer extends GFXMemory.Data, Loadable
 {
 	/**
 	 * Returns the height of the {@code GFXLayer}.

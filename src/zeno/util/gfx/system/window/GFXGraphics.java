@@ -1,6 +1,7 @@
 package zeno.util.gfx.system.window;
 
 import zeno.util.geom.utilities.VChain.Mode;
+import zeno.util.gfx.system.memory.GFXLayer;
 import zeno.util.gfx.system.window.graphics.GFXBlending;
 import zeno.util.gfx.system.window.graphics.GFXDepthTest;
 import zeno.util.gfx.system.window.graphics.GFXScissorTest;
@@ -250,6 +251,23 @@ public interface GFXGraphics extends Resettable
 		drawVertices(mode, vCount, 0);
 	}
 	
+	
+	/**
+	 * Changes the target of the {@code GFXGraphics}.
+	 * 
+	 * @param layer  a target layer
+	 * 
+	 * 
+	 * @see GFXLayer
+	 */
+	public abstract void target(GFXLayer layer);
+	
+	/**
+	 * Clears the alpha of the {@code GFXGraphics}.
+	 * 
+	 * @param a  an alpha value
+	 */
+	public abstract void clearAlpha(float a);
 	
 	/**
 	 * Clears the {@code GFXGraphics}.
