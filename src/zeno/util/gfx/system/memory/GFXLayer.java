@@ -167,7 +167,11 @@ public interface GFXLayer extends GFXMemory.Data, Loadable
 		/**
 		 * Stencil buffer.
 		 */
-		STENCIL;
+		STENCIL,
+		/**
+		 * No buffer.
+		 */
+		NONE;
 	}
 	
 	
