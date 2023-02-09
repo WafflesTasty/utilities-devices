@@ -13,7 +13,7 @@ import zeno.util.gfx.system.memory.GFXAsset;
  * @see GFXAsset
  */
 public interface GFXCanvas extends GFXAsset
-{
+{		
 	/**
 	 * The {@code Type} enum defines data types for a {@code GFXCanvas}.
 	 *

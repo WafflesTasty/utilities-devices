@@ -1,6 +1,7 @@
 package zeno.util.gfx.system.memory.assets;
 
 import zeno.util.gfx.system.memory.GFXAsset;
+import zeno.util.gfx.system.window.graphics.GFXDepthTest.Method;
 
 /**
  * The {@code GFXTexture} interface defines a texture that can be drawn to and read from.
@@ -24,9 +25,9 @@ public interface GFXTexture extends GFXAsset
 	public static interface Hints
 	{
 		/**
-		 * The {@code Scaling} enum defines scaling methods for a {@code GFXAsset}.
+		 * The {@code Scaling} enum defines scaling methods for a {@code GFXTexture}.
 		 * 
-		 * @author Zeno
+		 * @author Waffles
 		 * @since Sep 18, 2016
 		 * @version 1.0
 		 * 
@@ -60,11 +61,11 @@ public interface GFXTexture extends GFXAsset
 			 */
 			LINEAR;
 		}
-
+		
 		/**
-		 * The {@code Border} enum defines border methods for a {@code GFXAsset}.
+		 * The {@code Border} enum defines border methods for a {@code GFXTexture}.
 		 * 
-		 * @author Zeno
+		 * @author Waffles
 		 * @since Sep 18, 2016
 		 * @version 1.0
 		 * 
@@ -91,6 +92,16 @@ public interface GFXTexture extends GFXAsset
 			REPEAT,
 		}
 
+				
+		/**
+		 * Changes the compare method of the {@code GFXTexture}.
+		 * 
+		 * @param method  a compare method
+		 * 
+		 * 
+		 * @see Method
+		 */
+		public abstract void setCompareMethod(Method method);
 
 		/**
 		 * Changes the scaling method of the {@code GFXAsset}.
