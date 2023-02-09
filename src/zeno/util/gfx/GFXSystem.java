@@ -31,4 +31,14 @@ public interface GFXSystem
 	 * @see GFXWindow
 	 */
 	public abstract GFXWindow Window();
+	
+	/**
+	 * Validates the state of the {@code GFXSystem}.
+	 * 
+	 * @return {@code true} if the system is valid
+	 */
+	public default boolean validate()
+	{
+		return true;
+	}
 }
