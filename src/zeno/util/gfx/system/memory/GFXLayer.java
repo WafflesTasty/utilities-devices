@@ -19,6 +19,159 @@ import zeno.util.tools.patterns.manipulators.Loadable;
 public interface GFXLayer extends GFXMemory.Data, Loadable
 {
 	/**
+	 * The {@code Target} enum defines all render targets in a {@code GFXLayer}.
+	 *
+	 * @author Waffles
+	 * @since 09 Feb 2023
+	 * @version 1.0
+	 */
+	public static enum Target
+	{
+		/**
+		 * Color buffer 0.
+		 */
+		COLOR_0,
+		/**
+		 * Color buffer 1.
+		 */
+		COLOR_1,
+		/**
+		 * Color buffer 2.
+		 */
+		COLOR_2,
+		/**
+		 * Color buffer 3.
+		 */
+		COLOR_3,
+		/**
+		 * Color buffer 4.
+		 */
+		COLOR_4,
+		/**
+		 * Color buffer 5.
+		 */
+		COLOR_5,
+		/**
+		 * Color buffer 6.
+		 */
+		COLOR_6,
+		/**
+		 * Color buffer 7.
+		 */
+		COLOR_7,
+		/**
+		 * Color buffer 8.
+		 */
+		COLOR_8,
+		/**
+		 * Color buffer 9.
+		 */
+		COLOR_9,
+		/**
+		 * Color buffer 10.
+		 */
+		COLOR_10,
+		/**
+		 * Color buffer 11.
+		 */
+		COLOR_11,
+		/**
+		 * Color buffer 12.
+		 */
+		COLOR_12,
+		/**
+		 * Color buffer 13.
+		 */
+		COLOR_13,
+		/**
+		 * Color buffer 14.
+		 */
+		COLOR_14,
+		/**
+		 * Color buffer 15.
+		 */
+		COLOR_15,
+		/**
+		 * Color buffer 16.
+		 */
+		COLOR_16,
+		/**
+		 * Color buffer 17.
+		 */
+		COLOR_17,
+		/**
+		 * Color buffer 18.
+		 */
+		COLOR_18,
+		/**
+		 * Color buffer 19.
+		 */
+		COLOR_19,
+		/**
+		 * Color buffer 20.
+		 */
+		COLOR_20,
+		/**
+		 * Color buffer 21.
+		 */
+		COLOR_21,
+		/**
+		 * Color buffer 22.
+		 */
+		COLOR_22,
+		/**
+		 * Color buffer 23.
+		 */
+		COLOR_23,
+		/**
+		 * Color buffer 24.
+		 */
+		COLOR_24,
+		/**
+		 * Color buffer 25.
+		 */
+		COLOR_25,
+		/**
+		 * Color buffer 26.
+		 */
+		COLOR_26,
+		/**
+		 * Color buffer 27.
+		 */
+		COLOR_27,
+		/**
+		 * Color buffer 28.
+		 */
+		COLOR_28,
+		/**
+		 * Color buffer 29.
+		 */
+		COLOR_29,
+		/**
+		 * Color buffer 30.
+		 */
+		COLOR_30,
+		/**
+		 * Color buffer 31.
+		 */
+		COLOR_31,
+		
+		/**
+		 * Depth buffer.
+		 */
+		DEPTH,
+		/**
+		 * Depth & stencil buffer.
+		 */
+		DEPTH_STENCIL,
+		/**
+		 * Stencil buffer.
+		 */
+		STENCIL;
+	}
+	
+	
+	/**
 	 * Returns the height of the {@code GFXLayer}.
 	 * 
 	 * @return  a layer height
@@ -49,23 +202,30 @@ public interface GFXLayer extends GFXMemory.Data, Loadable
 	 */
 	public abstract Vector2 Dimension();
 	
+	
 	/**
-	 * Attaches a renderable asset into in the {@code GFXLayer}.
+	 * Attaches a renderable asset into the {@code GFXLayer}.
 	 * 
-	 * @param asset  a target asset
-	 * @param index  a target index
+	 * @param asset  a graphics asset
+	 * @param tgt    a layer target
 	 * 
 	 * 
 	 * @see GFXAsset
+	 * @see Target
 	 */
-	public abstract void attach(GFXAsset asset, int index);
+	public abstract void attach(GFXAsset asset, Target tgt);
 	
 	/**
-	 * Changes the active target of the {@code GFXLayer}.
+	 * Targets a specific buffer in the {@code GFXLayer}.
+	 * </br> The only allowed values here are of the type COLOR_XX.
 	 * 
-	 * @param index  a target index
+	 * @param tgt  a target buffer
+	 * 
+	 * 
+	 * @see Target
 	 */
-	public abstract void setTarget(int index);
+	public abstract void setTarget(Target tgt);
+	
 	
 	/**
 	 * Clears the {@code GFXLayer}.

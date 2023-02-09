@@ -1,24 +1,23 @@
-package zeno.util.gfx.system.memory.buffers;
+package zeno.util.gfx.system.memory.assets;
 
 import java.nio.ByteBuffer;
 
 import zeno.util.data.handlers.Image;
-import zeno.util.gfx.system.memory.GFXAsset;
 
 /**
- * The {@code GFXTexture} interface defines a texture generated in {@code GFXMemory}.
+ * The {@code GFXFlat} interface defines a flat image generated in {@code GFXMemory}.
  * 
- * @author Zeno
+ * @author Waffles
  * @since Sep 18, 2016
  * @version 1.0
  * 
  * 
- * @see GFXAsset
+ * @see GFXTexture
  */
-public interface GFXTexture extends GFXAsset
+public interface GFXFlat extends GFXTexture
 {	
 	/**
-	 * Loads data into a detail level of the {@code GFXTexture}.
+	 * Loads data into a detail level of the {@code GFXFlat}.
 	 * 
 	 * @param data  a data buffer to load
 	 * @param lod   a level of detail
@@ -30,7 +29,7 @@ public interface GFXTexture extends GFXAsset
 	public abstract void load(ByteBuffer data, int lod, int... size);
 	
 	/**
-	 * Loads an image into a detail level of the {@code GFXTexture}.
+	 * Loads an image into a detail level of the {@code GFXFlat}.
 	 * 
 	 * @param image  an image to load
 	 * @param lod    a level of detail

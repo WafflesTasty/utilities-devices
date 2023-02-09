@@ -1,21 +1,20 @@
-package zeno.util.gfx.system.memory.buffers;
+package zeno.util.gfx.system.memory.assets;
 
 import java.nio.ByteBuffer;
 
 import zeno.util.data.handlers.Image;
-import zeno.util.gfx.system.memory.GFXAsset;
 
 /**
  * The {@code GFXAtlas} interface defines a sprite atlas generated in {@code GFXMemory}.
  * 
- * @author Zeno
+ * @author Waffles
  * @since Sep 18, 2016
  * @version 1.0
  * 
  * 
- * @see GFXAsset
+ * @see GFXTexture
  */
-public interface GFXAtlas extends GFXAsset
+public interface GFXAtlas extends GFXTexture
 {	
 	/**
 	 * Loads data into a detail level of the {@code GFXAtlas}.
