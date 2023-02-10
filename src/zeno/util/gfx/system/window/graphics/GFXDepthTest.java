@@ -96,6 +96,13 @@ public interface GFXDepthTest extends Resettable
 	
 	/**
 	 * Clears the buffer of the {@code GFXDepthTest}.
+	 * 
+	 * @param val  a clear value
+	 */
+	public abstract void clear(float val);
+	
+	/**
+	 * Clears the buffer of the {@code GFXDepthTest}.
 	 */
 	public abstract void clear();
 }
