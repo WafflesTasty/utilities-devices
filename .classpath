@@ -7,7 +7,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry combineaccessrules="false" kind="src" path="/Utilities - Algebra"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/Utilities - Calculus"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Utilities - Geometry"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Utilities - Data Access"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Utilities - Tools"/>
