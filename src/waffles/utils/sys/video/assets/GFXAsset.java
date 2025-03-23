@@ -85,6 +85,7 @@ public interface GFXAsset extends GFXMemory.Data
 	 * @since 12 May 2020
 	 * @version 1.0
 	 */
+	@FunctionalInterface
 	public static interface Hints
 	{
 		/**
