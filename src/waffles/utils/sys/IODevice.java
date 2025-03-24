@@ -1,6 +1,7 @@
 package waffles.utils.sys;
 
 import waffles.utils.sys.audio.SFXPlayer;
+import waffles.utils.sys.input.IOInput;
 import waffles.utils.sys.memory.GFXMemory;
 import waffles.utils.sys.network.IONetwork;
 import waffles.utils.sys.video.GFXWindow;
@@ -53,6 +54,17 @@ public interface IODevice
 	 * @see GFXWindow
 	 */
 	public abstract GFXWindow Window();
+	
+	/**
+	 * Returns the input of the {@code IODevice}.
+	 * 
+	 * @return  an input handler
+	 * 
+	 * 
+	 * @see IOInput
+	 */
+	public abstract IOInput Input();
+	
 	
 	/**
 	 * An event raised to check if the {@code IODevice} is valid.

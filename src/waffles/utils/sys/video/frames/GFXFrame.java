@@ -1,8 +1,8 @@
 package waffles.utils.sys.video.frames;
 
 import waffles.utils.sys.memory.GFXMemory;
-import waffles.utils.sys.utilities.Color;
-import waffles.utils.sys.utilities.Colors;
+import waffles.utils.sys.utilities.video.Color;
+import waffles.utils.sys.utilities.video.Colors;
 import waffles.utils.sys.video.assets.GFXAsset;
 
 /**

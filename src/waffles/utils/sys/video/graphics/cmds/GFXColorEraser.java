@@ -1,6 +1,6 @@
 package waffles.utils.sys.video.graphics.cmds;
 
-import waffles.utils.sys.utilities.Color;
+import waffles.utils.sys.utilities.video.Color;
 
 /**
  * The {@code GFXColorEraser} interface defines clear options for {@code GFXGraphics}.

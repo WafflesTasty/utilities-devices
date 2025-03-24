@@ -4,7 +4,7 @@ import waffles.utils.algebra.elements.linear.vector.fixed.Vector2;
 import waffles.utils.geom.bounds.Bounded2D;
 import waffles.utils.geom.bounds.Bounds2D;
 import waffles.utils.sys.IODevice;
-import waffles.utils.sys.utilities.video.VideoMode;
+import waffles.utils.sys.utilities.VideoMode;
 import waffles.utils.sys.video.graphics.GFXGraphics;
 import waffles.utils.tools.patterns.semantics.Disposable;
 

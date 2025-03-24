@@ -1,4 +1,4 @@
-package waffles.utils.sys.utilities;
+package waffles.utils.sys.utilities.video;
 
 import waffles.utils.tools.Randomizer;
 import waffles.utils.tools.primitives.Floats;

@@ -1,4 +1,4 @@
-package waffles.utils.sys.utilities;
+package waffles.utils.sys.utilities.video;
 
 import waffles.utils.sets.arrays.set.FloatSet;
 import waffles.utils.tools.primitives.Array;

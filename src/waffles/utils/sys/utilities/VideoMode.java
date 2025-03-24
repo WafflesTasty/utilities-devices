@@ -1,4 +1,4 @@
-package waffles.utils.sys.utilities.video;
+package waffles.utils.sys.utilities;
 
 import waffles.utils.algebra.elements.linear.vector.fixed.Vector2;
 
