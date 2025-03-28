@@ -19,7 +19,7 @@ public interface IOMouse
 	 * @since Oct 26, 2015
 	 * @version 1.0
 	 */
-	public static class Event
+	public static class EventOld
 	{
 		private float x, y, value;
 		private MouseButton button;
@@ -35,7 +35,7 @@ public interface IOMouse
 		 * 
 		 * @see MouseButton
 		 */
-		public Event(float x, float y, MouseButton btn)
+		public EventOld(float x, float y, MouseButton btn)
 		{
 			this(x, y);	button = btn;
 		}
@@ -47,7 +47,7 @@ public interface IOMouse
 		 * @param y    an y-coordinate
 		 * @param val  a scroll value
 		 */
-		public Event(float x, float y, float val)
+		public EventOld(float x, float y, float val)
 		{
 			this(x, y); value = val;
 		}
@@ -58,7 +58,7 @@ public interface IOMouse
 		 * @param x    an x-coordinate
 		 * @param y    an y-coordinate
 		 */
-		public Event(float x, float y)
+		public EventOld(float x, float y)
 		{
 			this.x = x;
 			this.y = y;
