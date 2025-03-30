@@ -30,4 +30,16 @@ public interface GFXConnection extends Connection<GFXAccess, Boolean>
 	{
 		return connect(() -> ops);		
 	}
+	
+	/**
+	 * Opens a connection to the full {@code GFXBuffer}.
+	 * By default, the buffer is opened for both
+	 * reading and writing data.
+	 * 
+	 * @return {@code true} if connecting was successful
+	 */
+	public default Boolean connect()
+	{
+		return connect(AccessOps.READ_WRITE);
+	}
 }
