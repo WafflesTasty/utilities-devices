@@ -4,7 +4,7 @@ import waffles.utils.sys.memory.GFXMemory;
 import waffles.utils.sys.video.graphics.cmds.GFXDepthCheck.Method;
 
 /**
- * A {@code GFXAssetOld} defines a hardware-accelerated graphics texture.
+ * A {@code GFXAsset} defines a hardware-accelerated graphics texture.
  *
  * @author Waffles
  * @since 09 Feb 2023
@@ -16,7 +16,7 @@ import waffles.utils.sys.video.graphics.cmds.GFXDepthCheck.Method;
 public interface GFXAsset extends GFXMemory.Data
 {
 	/**
-	 * A {@code Border} defines a border method for a {@code GFXAssetOld}.
+	 * A {@code Border} defines a border method for a {@code GFXAsset}.
 	 * 
 	 * @author Waffles
 	 * @since Sep 18, 2016
@@ -25,25 +25,25 @@ public interface GFXAsset extends GFXMemory.Data
 	public static enum Border
 	{
 		/**
-		 * Do not draw beyond the edge of the {@code GFXAssetOld}.
+		 * Do not draw beyond the edge of the {@code GFXAsset}.
 		 */
 		NONE,
 		/**
-		 * Clamp coordinates to the edge of the {@code GFXAssetOld}.
+		 * Clamp coordinates to the edge of the {@code GFXAsset}.
 		 */
 		CLAMP_TO_EDGE,
 		/**
-		 * Mirror and repeat coordinates of the {@code GFXAssetOld}.
+		 * Mirror and repeat coordinates of the {@code GFXAsset}.
 		 */
 		MIRROR_REPEAT,
 		/**
-		 * Repeat coordinates of the {@code GFXAssetOld}.
+		 * Repeat coordinates of the {@code GFXAsset}.
 		 */
 		REPEAT,
 	}
 	
 	/**
-	 * A {@code Scaling} defines a scaling method for a {@code GFXAssetOld}.
+	 * A {@code Scaling} defines a scaling method for a {@code GFXAsset}.
 	 * 
 	 * @author Waffles
 	 * @since Sep 18, 2016
@@ -79,7 +79,7 @@ public interface GFXAsset extends GFXMemory.Data
 		
 	
 	/**
-	 * The {@code Hints} define settings for a {@code GFXAssetOld}.
+	 * The {@code Hints} define settings for a {@code GFXAsset}.
 	 *
 	 * @author Waffles
 	 * @since 12 May 2020
@@ -205,7 +205,7 @@ public interface GFXAsset extends GFXMemory.Data
 	}
 	
 	/**
-	 * Returns the hints of the {@code GFXAssetOld}.
+	 * Returns the hints of the {@code GFXAsset}.
 	 * 
 	 * @return  asset hints
 	 * 
