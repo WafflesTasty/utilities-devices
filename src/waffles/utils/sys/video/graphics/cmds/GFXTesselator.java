@@ -20,7 +20,7 @@ public interface GFXTesselator extends Resettable
 	 * 
 	 * @param count  a patch count
 	 */
-	public abstract void setPatchCount(int count);
+	public abstract void setVertexCount(int count);
 	
 	/**
 	 * Changes the default inner level of the {@code GFXTesselator}.
