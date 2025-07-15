@@ -8,10 +8,11 @@ import waffles.utils.sys.memory.config.ProgramConfig;
 import waffles.utils.sys.memory.config.WindowConfig;
 import waffles.utils.sys.memory.groups.GFXField;
 import waffles.utils.sys.memory.groups.GFXFormat;
-import waffles.utils.sys.memory.groups.GFXField.Type;
+import waffles.utils.sys.memory.groups.GFXValue.Type;
 import waffles.utils.sys.memory.shaders.GFXProgram;
 import waffles.utils.sys.memory.shaders.GFXShader;
 import waffles.utils.sys.memory.groups.GFXGlobal;
+import waffles.utils.sys.memory.groups.GFXValue;
 import waffles.utils.sys.video.assets.GFXAsset;
 import waffles.utils.sys.video.frames.GFXCanvas;
 import waffles.utils.sys.video.frames.GFXFrame;
@@ -58,7 +59,7 @@ public interface GFXMemory
 	{
 		if(type == GFXField.class)
 		{
-			GFXField.Type val = (Type) data[0];
+			GFXValue.Type val = (Type) data[0];
 			GFXGroup grp = (GFXGroup) data[1];
 			int cnt = (int) data[2];
 			
@@ -70,14 +71,15 @@ public interface GFXMemory
 			Class<?> val = (Class<?>) data[0];
 			GFXGroup grp = (GFXGroup) data[1];
 			int dim = (int) data[2];
+			int cnt = (int) data[3];
 			
 			if(val == GFXAsset.class)
 			{	
-				boolean isAtlas = (boolean) data[3];
-				return (D) Program().createSampler(grp, dim, isAtlas);
+				boolean isAtlas = (boolean) data[4];
+				return (D) Program().createSampler(grp, dim, cnt, isAtlas);
 			}
 			
-			return (D) Program().createGlobal(grp, val, dim);
+			return (D) Program().createGlobal(grp, val, dim, cnt);
 		}
 		
 		if(type == GFXFormat.class)

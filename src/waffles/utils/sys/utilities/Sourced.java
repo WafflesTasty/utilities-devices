@@ -1,4 +1,4 @@
-package waffles.utils.sys.utilities.video;
+package waffles.utils.sys.utilities;
 
 /**
  * A {@code Sourced} object defines a source {@code String}.

@@ -1,7 +1,7 @@
 package waffles.utils.sys.memory.shaders;
 
 import waffles.utils.sys.memory.GFXMemory;
-import waffles.utils.sys.utilities.video.Sourced;
+import waffles.utils.sys.utilities.Sourced;
 import waffles.utils.tools.patterns.semantics.Loadable;
 
 /**

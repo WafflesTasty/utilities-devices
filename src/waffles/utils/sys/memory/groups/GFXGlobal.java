@@ -1,7 +1,6 @@
 package waffles.utils.sys.memory.groups;
 
-import waffles.utils.geom.utilities.Dimensional;
-import waffles.utils.sys.memory.GFXMemory;
+import waffles.utils.tools.patterns.semantics.Countable;
 
 /**
  * A {@code GFXGlobal} defines a global data field for a {@code GFXGroup}.
@@ -12,15 +11,23 @@ import waffles.utils.sys.memory.GFXMemory;
  * 
  * 
  * @param <O>  a data type
- * @see Dimensional
- * @see GFXMemory
+ * @see Countable
+ * @see GFXValue
  */
-public interface GFXGlobal<O> extends GFXMemory.Data, Dimensional
-{
+public interface GFXGlobal<O> extends GFXValue<O>, Countable
+{	
 	/**
 	 * Changes the value of the {@code GFXGlobal}.
 	 * 
+	 * @param i  an array index
 	 * @param value  a value array
 	 */
-	public abstract void set(O... value);
+	public abstract void set(long i, O... value);
+	
+
+	@Override
+	public default void set(O... value)
+	{
+		set(0, value);
+	}
 }

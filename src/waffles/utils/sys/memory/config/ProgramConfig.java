@@ -3,7 +3,7 @@ package waffles.utils.sys.memory.config;
 import waffles.utils.sys.memory.GFXGroup;
 import waffles.utils.sys.memory.groups.GFXField;
 import waffles.utils.sys.memory.groups.GFXFormat;
-import waffles.utils.sys.memory.groups.GFXField.Type;
+import waffles.utils.sys.memory.groups.GFXValue.Type;
 import waffles.utils.sys.memory.shaders.GFXProgram;
 import waffles.utils.sys.memory.shaders.GFXShader;
 import waffles.utils.sys.memory.groups.GFXGlobal;
@@ -62,26 +62,28 @@ public interface ProgramConfig
 	 * @param grp   a data group
 	 * @param type  a data type
 	 * @param dim   a data count
+	 * @param cnt   an array count
 	 * @return  a global field
 	 * 
 	 * 
 	 * @see GFXGlobal
 	 * @see GFXGroup
 	 */
-	public abstract GFXGlobal<?> createGlobal(GFXGroup grp, Class<?> type, int dim);
+	public abstract GFXGlobal<?> createGlobal(GFXGroup grp, Class<?> type, int dim, int cnt);
 	
 	/**
 	 * Creates a new {@code GFXGlobal} sampler.
 	 * 
 	 * @param grp  a data group
 	 * @param dim  a data count
+	 * @param cnt   an array count
 	 * @param isAtlas  an atlas mode
 	 * @return  a global sampler
 	 * 
 	 * 
 	 * @see GFXGlobal
 	 */
-	public abstract GFXGlobal<?> createSampler(GFXGroup grp, int dim, boolean isAtlas);
+	public abstract GFXGlobal<?> createSampler(GFXGroup grp, int dim, int cnt, boolean isAtlas);
 
 	/**
 	 * Creates a new {@code GFXShader}.
