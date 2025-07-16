@@ -112,7 +112,8 @@ public class Couple extends Allocation.Base
 	 */
 	public Inlet input(Type type)
 	{
-		Inlet in = new Inlet(Field(), Label(), index(type));
+		int idx = index(type);
+		Inlet in = new Inlet(Field(), Label(), idx);
 		in.setPerPatch(isPerPatch());
 		return in;
 	}
@@ -128,7 +129,19 @@ public class Couple extends Allocation.Base
 	 */
 	public Outlet output(Type type)
 	{
-		Outlet out = new Outlet(Field(), Label(), index(type.next()));
+		Type next = type.next();
+		
+		int idx = -1;
+		while(next != null)
+		{
+			idx = index(next);
+			next = next.next();
+			if(idx != -1)
+				break;
+		}
+
+		
+		Outlet out = new Outlet(Field(), Label(), idx);
 		out.setPerPatch(isPerPatch());
 		return out;
 	}

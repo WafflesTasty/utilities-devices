@@ -155,6 +155,34 @@ public interface Variable extends Allocation, Declarative
 	}
 	
 	/**
+	 * Indexes the {@code Variable} with a color.
+	 * 
+	 * @param index  a vector index
+	 * @return  an indexed string
+	 */
+	public default String col(int index)
+	{
+		if(index < 0)
+			throw new ScriptingError("An index < 0 was passed.");
+		if(index > 3)
+			throw new ScriptingError("An index > 3 was passed.");
+		
+		switch(index)
+		{
+		case 0:
+			return Label() + ".r";
+		case 1:
+			return Label() + ".g";
+		case 2:
+			return Label() + ".b";
+		case 3:
+			return Label() + ".a";
+		default:
+			return "";
+		}
+	}
+	
+	/**
 	 * Indexes the {@code Variable} with a letter.
 	 * 
 	 * @param index  a vector index
