@@ -113,45 +113,143 @@ public interface Variable extends Allocation, Declarative
 		}
 	}
 	
-	
 	/**
-	 * Casts the {@code Variable} to another dimension.
-	 * 
-	 * @param dim  a field dimension
-	 * @return  a cast string
+	 * A {@code Cast} defines {@code Variable} casters.
+	 *
+	 * @author Waffles
+	 * @since 23 Jul 2025
+	 * @version 1.1
 	 */
-	public default String cast(int dim)
+	public static class Cast
 	{
-		return cast(dim, true);
-	}
-	
-	/**
-	 * Casts the {@code Variable} to another dimension.
-	 * 
-	 * @param dim  a field dimension
-	 * @param isAffine  an affine state
-	 * @return  a cast string
-	 */
-	public default String cast(int dim, boolean isAffine)
-	{
-		if(Dimension() == dim)
-			return Label();
+		private Variable var;
 		
-
-		String src = Label();
-		ValueType type = Field().cast(dim);
-		if(Field().Type() != GFXValue.Type.MATRIX)
+		/**
+		 * Creates a new {@code Cast}.
+		 * 
+		 * @param v  a variable
+		 * 
+		 * 
+		 * @see Variable
+		 */
+		public Cast(Variable v)
 		{
-			for(int i = Dimension(); i < dim; i++)
-			{
-				if(i == 3 && isAffine)
-					src += ", 1.0";
-				else
-					src += ", 0.0";
-			}
+			var = v;
 		}
 		
-		return type + "(" + src + ")";
+		/**
+		 * Casts the {@code Variable} to another dimension.
+		 * 
+		 * @param dim  a field dimension
+		 * @return  a cast string
+		 */
+		public String to(int dim)
+		{
+			return to(dim, true);
+		}
+				
+		/**
+		 * Casts the {@code Variable} to another dimension.
+		 * 
+		 * @param dim  a field dimension
+		 * @param isAffine  an affine state
+		 * @return  a cast string
+		 */
+		public String to(int dim, boolean isAffine)
+		{
+			if(var.Dimension() == dim)
+				return var.Label();
+			
+
+			String src = var.Label();
+			ValueType type = var.Field().cast(dim);
+			if(var.Field().Type() != GFXValue.Type.MATRIX)
+			{
+				for(int i = var.Dimension(); i < dim; i++)
+				{
+					if(i == 3 && isAffine)
+						src += ", 1.0";
+					else
+						src += ", 0.0";
+				}
+			}
+			
+			return type + "(" + src + ")";
+		}
+			
+		/**
+		 * Casts the {@code Variable} to another field type.
+		 * 
+		 * @param field  a field type
+		 * @param isAffine  an affine state
+		 * @return  a cast string
+		 * 
+		 * 
+		 * @see ValueType
+		 */
+		public String to(ValueType field, boolean isAffine)
+		{
+			String cast = to(field.Dimension(), isAffine);
+			if(field.Type() != var.Field().Type())
+			{
+				cast = field.declare() + "(" + cast + ")";
+			}
+			
+			return cast;
+		}
+
+		/**
+		 * Casts the {@code Variable} to another value type.
+		 * 
+		 * @param type  a value type
+		 * @param dim   a value dimension
+		 * @param isAffine  an affine state
+		 * @return  a cast string
+		 */
+		public String to(GFXValue.Type type, int dim, boolean isAffine)
+		{
+			return to(new ValueType.Base(type, dim), isAffine);
+		}
+		
+		/**
+		 * Casts the {@code Variable} to another value type.
+		 * 
+		 * @param type  a value type
+		 * @param dim   a value dimension
+		 * @return  a cast string
+		 */
+		public String to(GFXValue.Type type, int dim)
+		{
+			return to(type, dim, true);
+		}
+		
+		/**
+		 * Casts the {@code Variable} to another field type.
+		 * 
+		 * @param field  a field type
+		 * @return  a cast string
+		 * 
+		 * 
+		 * @see ValueType
+		 */
+		public String to(ValueType field)
+		{
+			return to(field, true);
+		}
+	}
+	
+	
+	/**
+	 * Casts the {@code Variable} to a type.
+	 * 
+	 * @return  a cast object
+	 * 
+	 * 
+	 * @see Cast
+	 */
+	public default Cast Cast()
+	{
+		return new Cast(this);
 	}
 	
 	/**
